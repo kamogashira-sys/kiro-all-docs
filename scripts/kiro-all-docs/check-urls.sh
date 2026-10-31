@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+# check-urls.sh - 公開文書に載せた外部 URL の到達性チェック（★外部サイトに依存）
+#
+# 使用方法:
+#   scripts/kiro-all-docs/check-urls.sh              # 全件
+#   scripts/kiro-all-docs/check-urls.sh --important  # 重要 URL のみ（切り分け用）
+#
+# ⚠️ **本スクリプトは外部サイトにアクセスします。**
+#    レート制限・一時障害で失敗しうるため `make check-kiro-web-all` には**含めません**。
+#
+# 作法（実測で確認・F-W11）:
+#   - **末尾スラッシュ必須**: changelog も docs も、無しは 301（本文0バイト）。
+#     したがって **`-L`（リダイレクト追随）を使わない**。301 が返ったら
+#     「本サイトの URL 表記が誤っている」ことを意味するので失敗にする。
+#   - **User-Agent 必須**: 空文字の明示指定は 403。`-A "Mozilla/5.0"` を付ける。
+#
+# 除外（誤検知を避けるため）:
+#   - **雛形 URL**（`<slug>`・`（パス）` 等のプレースホルダを含むもの）。
+#     手順書・テンプレートに意図的に存在するため、実 URL として叩くと必ず失敗する。
+#     ⚠️ Phase 1 の暫定検査でこの誤検知を 3 件出した実例がある。
+#   - ローカル管理領域（work_plans / 05_meta / 06_embedded-docs / work_records）
+#
+# fail-safe:
+#   - **ネットワークそのものが不通なら exit 0 ＋ 案内**（CI やオフラインで赤くしない）
+#   - 到達性の失敗（404・301 等）は exit 1
+#
+# 移転スタブ検出（2026-08 の公式サイト再構成で判明。kiro-ide-docs から移植・F-W: 2026-08-16）:
+#   旧 URL 体系のページが HTTP 200 を返すが実体を持たない「移転案内スタブ」になる場合がある。
+#   スタブは HTTP リダイレクトを一切行わない（meta refresh と JS のみで遷移する。
+#   ステータスコードだけを見る検査では検出できない）。
+#   本文に `moved to <a href="..."` が含まれるかどうかでのみ判定できる（実測で確認済み）。
+#   対象は kiro.dev/docs/ 配下の 200/204 のみ（パフォーマンスと誤検知防止のため）。
+
+set -uo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+cd "$REPO_ROOT" || exit 1
+
+UA="Mozilla/5.0"
+IMPORTANT_ONLY=0
+[ "${1:-}" = "--important" ] && IMPORTANT_ONLY=1
+
+# 重要 URL（全件チェックが外部要因で落ちたときの切り分け用）
+IMPORTANT=(
+  # 公式（本サイトの出典の中核）
+  "https://kiro.dev/"
+  "https://kiro.dev/docs/"
+  "https://kiro.dev/docs/how-kiro-works/"
+  "https://kiro.dev/docs/cli/v3/"
+  "https://kiro.dev/blog/"
+  "https://kiro.dev/blog/one-agent/"
+  "https://kiro.dev/blog/cli-3/"
+  "https://kiro.dev/blog/introducing-kiro-cli/"
+  "https://kiro.dev/blog/which-kiro-app-should-i-pick/"
+  "https://kiro.dev/changelog/cli/"
+  "https://kiro.dev/llms.txt"
+  "https://kiro.dev/sitemap.xml"
+  "https://github.com/aws/amazon-q-developer-cli"
+  # 姉妹サイト
+  "https://github.com/kamogashira-sys/q-cli-docs"
+  "https://github.com/kamogashira-sys/kiro-ide-docs"
+  "https://github.com/kamogashira-sys/kiro-web-docs"
+  "https://github.com/kamogashira-sys/kiro-crew-docs"
+  # 筆者の Qiita 記事
+  "https://qiita.com/kamogashira/items/519a52614ba113bfe9cb"
+  "https://qiita.com/kamogashira/items/0e9c9e4e60b032ad9621"
+  "https://qiita.com/kamogashira/items/b1dd5f5dec37ca75206e"
+)
+
+echo "=== kiro-all-docs 外部 URL 到達性チェック ==="
+echo ""
+
+# ------------------------------------------------------------
+# ネットワーク疎通の事前確認（fail-safe）
+# ------------------------------------------------------------
+if ! curl -sS --max-time 15 -A "$UA" -o /dev/null "https://kiro.dev/"; then
+  echo "⚠️  ネットワークに到達できませんでした（**未検証**です）"
+  echo "   → これは「URL が有効であることを検証した」ではありません"
+  echo "   オフライン環境・プロキシ・一時障害の可能性があります"
+  exit 0
+fi
+
+# ------------------------------------------------------------
+# 検査対象 URL の収集
+# ------------------------------------------------------------
+if [ "$IMPORTANT_ONLY" -eq 1 ]; then
+  printf '%s\n' "${IMPORTANT[@]}" > /tmp/ka_urls.txt
+  echo "重要 URL のみを検査します（${#IMPORTANT[@]} 件）"
+else
+  # 公開文書から http(s) URL を抽出する。
+  # ⚠️ 雛形 URL（プレースホルダを含むもの）を除外する。
+  python3 - > /tmp/ka_urls.txt <<'PY'
+import glob, os, re
+
+EXCLUDE = ("06_embedded-docs", "work_plans", "work_records")
+
+# 雛形 URL（プレースホルダ入り）。実 URL として叩くと必ず失敗する。
+PLACEHOLDER = re.compile(r"[<>{}]|（|\((?:スラッグ|パス|slug|path)\)")
+
+# ⚠️ **正規表現の断片**を URL として拾わない。
+#    手順書には `grep -oE 'https://kiro\.dev/changelog/web/[^<]*'` のような
+#    コマンド例があり、`\.` や `[^<]*` を含む文字列が URL に見える（実測で1件）。
+REGEX_FRAGMENT = re.compile(r"\\\.|\[\^|\.\*|\[0-9\]|\\d")
+
+# ⚠️ **他社・他サービスのエンドポイント**は到達性検査の対象にしない。
+#    公式の設定例に出てくる外部 API（302 を返す）などを本サイトの誤りとして
+#    報告すると、直せないものを永久に赤くすることになる（実測で1件）。
+#    許可ドメイン一覧のドメイン（73件）も「叩いて確認する対象」ではない。
+THIRD_PARTY = re.compile(
+    r"^https?://(?!(?:kiro\.dev|app\.kiro\.dev|cli\.kiro\.dev|github\.com/kamogashira-sys|"
+    r"github\.com/kirodotdev|github\.com/aws/amazon-q-developer-cli|qiita\.com/kamogashira))")
+
+files = sorted(glob.glob("kiro-all-docs/**/*.md", recursive=True))
+files = [f for f in files if not any(x in f for x in EXCLUDE)]
+files += ["README.md"] + sorted(glob.glob(".github/*.md"))
+
+urls = set()
+for f in files:
+    if not os.path.isfile(f):
+        continue
+    # コードブロックは除外しない（手順のコマンド内の URL も到達性を見たい）が、
+    # 雛形 URL・正規表現の断片・他社サービスはここで落とす。
+    for m in re.finditer(r"https?://[^\s<>()\[\]\"'`|]+", open(f, encoding="utf-8").read()):
+        u = m.group(0).rstrip(".,;:)")
+        if PLACEHOLDER.search(u) or REGEX_FRAGMENT.search(u) or THIRD_PARTY.match(u):
+            continue
+        urls.add(u)
+
+for u in sorted(urls):
+    print(u)
+PY
+  echo "公開文書から $(wc -l < /tmp/ka_urls.txt) 件の URL を抽出しました"
+  echo "（雛形 URL（プレースホルダ入り）は除外しています）"
+fi
+
+echo ""
+
+# $1=URL -> 移転先パスを標準出力へ（移転スタブでなければ空文字）
+check_moved_stub() {
+  local url="$1" body target
+  body=$(curl -s -A "$UA" --max-time 15 --retry 2 --retry-delay 1 "$url" 2>/dev/null || echo "")
+  target=$(printf '%s' "$body" | grep -oE 'moved to <a href="[^"]+"' | head -1 | sed -E 's/.*href="([^"]+)".*/\1/')
+  echo "$target"
+}
+
+fail=0
+ok=0
+stub_checked=0
+declare -a failures=()
+
+while IFS= read -r url; do
+  [ -z "$url" ] && continue
+  # ⚠️ `-L` を使わない。301 は「本サイトの URL 表記が誤っている」ことを意味する。
+  code=$(curl -sS --max-time 20 -o /dev/null -w '%{http_code}' -A "$UA" "$url" 2>/dev/null || echo "000")
+  case "$code" in
+    200|204)
+      # kiro.dev/docs/ 配下のみ移転スタブ判定を行う（誤検知防止・パフォーマンス）
+      case "$url" in
+        https://kiro.dev/docs/*)
+          stub_checked=$((stub_checked + 1))
+          moved_to=$(check_moved_stub "$url")
+          if [ -n "$moved_to" ]; then
+            failures+=("$code $url  → 移転スタブ（実体なし）。移転先: $moved_to")
+            fail=1
+            continue
+          fi
+          ;;
+      esac
+      ok=$((ok + 1))
+      ;;
+    301|302|307|308)
+      failures+=("$code $url  → リダイレクトされました（末尾スラッシュの有無を確認してください）")
+      fail=1
+      ;;
+    000)
+      failures+=("--- $url  → 接続できませんでした（一時障害の可能性）")
+      fail=1
+      ;;
+    *)
+      failures+=("$code $url")
+      fail=1
+      ;;
+  esac
+done < /tmp/ka_urls.txt
+
+echo "移転スタブ判定を実施した kiro.dev/docs/ URL: $stub_checked 件"
+echo "到達 OK: $ok 件"
+if [ ${#failures[@]} -gt 0 ]; then
+  echo ""
+  echo "❌ 到達できなかった URL: ${#failures[@]} 件"
+  for x in "${failures[@]}"; do
+    echo "   - $x"
+  done
+  echo ""
+  echo "❌ URL 到達性チェックに失敗しました"
+  echo "   （301 の場合は末尾スラッシュを追加してください — changelog も docs も必須）"
+  exit 1
+fi
+
+echo ""
+echo "✅ すべての外部 URL に到達できました"
+exit 0

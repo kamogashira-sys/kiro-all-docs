@@ -37,7 +37,7 @@ GitHub Issues・他者ブログ・姉妹サイト（自サイト）は根拠に�
 
 ```bash
 make check-kiro-all-ignore   # 公開範囲（最初に実行）
-make check-kiro-all-all      # links / notation（＋追加予定: sources / quotes / first-person）
+make check-kiro-all-all      # links / notation / sources / quotes / first-person（警告のみ）
 make check-kiro-all-urls-important   # 外部 URL（手動・push 時 CI）
 ```
 

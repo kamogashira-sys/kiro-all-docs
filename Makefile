@@ -20,6 +20,7 @@
 .PHONY: help \
         check-kiro-all-all check-kiro-all-quick check-kiro-all-ignore \
         check-kiro-all-links check-kiro-all-notation \
+        check-kiro-all-sources check-kiro-all-quotes check-kiro-all-first-person \
         check-kiro-all-urls check-kiro-all-urls-important
 
 SCRIPTS := ./scripts/kiro-all-docs
@@ -35,19 +36,21 @@ help:
 	@echo "個別に実行（ネットワーク不要）:"
 	@echo "  make check-kiro-all-links          # 内部リンク実在＋アンカー（日本語含む）＋kiro.dev URL 書式"
 	@echo "  make check-kiro-all-notation       # 表記規約（製品名の揺れ・非 ISO 日付・取得日・禁止表現・所属語句）"
+	@echo "  make check-kiro-all-sources        # H2 節ごとの出典リンクの有無（00_start / 01_story / 03_reference）"
+	@echo "  make check-kiro-all-quotes         # 英文引用が 1 箇所 30 語以内"
+	@echo "  make check-kiro-all-first-person   # 🐾 ブロック外の一人称・推し表現（警告のみ・exit 0）"
 	@echo ""
 	@echo "外部サイトに依存（all には含めない）:"
 	@echo "  make check-kiro-all-urls           # 公開文書の外部 URL の到達性（全件）"
 	@echo "  make check-kiro-all-urls-important # 重要 URL のみ（公式・姉妹サイト・Qiita）"
 	@echo ""
-	@echo "未実装（作業計画 0-5 / 3-7 で追加予定）:"
-	@echo "  check-kiro-all-sources / check-kiro-all-quotes / check-kiro-all-first-person"
+	@echo "未実装（作業計画 3-7 で追加予定）:"
 	@echo "  check-kiro-all-blog-index-count / check-kiro-all-blog-sync"
 
 # ------------------------------------------------------------
 # まとめて実行
 # ------------------------------------------------------------
-check-kiro-all-all: check-kiro-all-links check-kiro-all-notation
+check-kiro-all-all: check-kiro-all-links check-kiro-all-notation check-kiro-all-sources check-kiro-all-quotes check-kiro-all-first-person
 	@echo ""
 	@echo "=== check-kiro-all-all: すべて完了 ==="
 
@@ -64,6 +67,15 @@ check-kiro-all-links:
 
 check-kiro-all-notation:
 	@$(SCRIPTS)/check-notation.py
+
+check-kiro-all-sources:
+	@$(SCRIPTS)/check-sources.py
+
+check-kiro-all-quotes:
+	@$(SCRIPTS)/check-quotes.py
+
+check-kiro-all-first-person:
+	@$(SCRIPTS)/check-first-person.py
 
 # ------------------------------------------------------------
 # 外部依存

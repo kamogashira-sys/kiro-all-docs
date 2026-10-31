@@ -41,8 +41,7 @@ jobs:
       - name: 公開範囲チェック（ローカル管理対象・ローカル絶対パスの混入）
         run: make check-kiro-all-ignore
 
-      # ネットワーク不要の全チェック（links / notation。0-5 で sources / quotes /
-      # first-person を追加する）。
+      # ネットワーク不要の全チェック（links / notation / sources / quotes / first-person）。
       - name: 全チェック（ネットワーク不要）
         run: make check-kiro-all-all
 

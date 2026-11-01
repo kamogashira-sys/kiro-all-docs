@@ -2,7 +2,7 @@
 
 入口は [リポジトリの README](../README.md) にあります。本ページはサイト本体の目次です。
 
-## はじめての人向け（`00_start/`）
+## はじめての人向け（[`00_start/`](00_start/README.md)）
 
 | ページ | 内容 |
 |---|---|
@@ -10,7 +10,7 @@
 | [どのアプリを選ぶか ― 「どれか」ではなく「この仕事にはどれか」](00_start/02_which-app.md) | 公式「Which Kiro app should I pick?」の要旨。2 つの原則、入口ごとの説明と公式ドキュメントの冒頭、早見表 |
 | [はじめ方 ― Kiro CLI を 3 ステップで、ほかの入口は公式へ](00_start/03_get-started.md) | インストール → サインイン → 最初の 1 プロンプト（公式手順）。IDE・Web・Mobile・Crew・ACP エディタの導線 |
 
-## 開発経緯・秘話（`01_story/`）
+## 開発経緯・秘話（[`01_story/`](01_story/README.md)）
 
 | ページ | 内容 |
 |---|---|
@@ -19,14 +19,14 @@
 | [Kiro CLI の道 ― Amazon Q Developer CLI から V3 へ](01_story/03_cli-journey.md) | 2025-11-17 の誕生から ACP・新 TUI・2.0・V3 早期提供・既定化まで。CLI 3.0 の現在の状態 |
 | [Kiro Crew の起源 ― MeshClaw から software factory へ](01_story/04_crew-origin.md) | 社内 side project から OSS 公開へ。原則から外れて出荷した理由、3 人で週 1,000 PR、品質を保つ仕組み |
 
-## 筆者の推し（`02_why-kiro-cli/`）
+## 筆者の推し（[`02_why-kiro-cli/`](02_why-kiro-cli/README.md)）
 
 | ページ | 内容 |
 |---|---|
 | [なぜ筆者は Kiro CLI が好きなのか](02_why-kiro-cli/01_why-i-love-kiro-cli.md) | 筆者の意見ページ。出会い、選ぶ理由、マニュアル車の手触り、V3 で変わったこと |
 | [筆者の記事 ― Qiita に書いた Kiro の話](02_why-kiro-cli/02_my-articles.md) | 本サイトが紹介する 3 本の公開日・登壇・要旨、「猫でもわかる Q CLI・Kiro CLI」シリーズ 6 本、出会いの記事 |
 
-## リファレンス（`03_reference/`）
+## リファレンス（[`03_reference/`](03_reference/README.md)）
 
 | ページ | 内容 |
 |---|---|

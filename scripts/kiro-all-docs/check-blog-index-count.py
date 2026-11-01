@@ -17,7 +17,7 @@ import subprocess
 import sys
 
 RANGE_RE = re.compile(r"収録範囲: 公式ブログ (\d{4}-\d{2}-\d{2})〜(\d{4}-\d{2}-\d{2}) 公開分（(\d+) 本）")
-ROW_RE = re.compile(r"^\| \d{4}-\d{2}-\d{2} \| \[.+\]\(https://kiro\.dev/blog/[^)]+/\) \| [^|]+ \|$")
+ROW_RE = re.compile(r"^\| \d{4}-\d{2}-\d{2} \| \[.+\]\(https://kiro\.dev/blog/[^)]+/\) \| [^|]+ \| ★{1,3} \| [^|]+ \|$")
 
 
 def repo_root():

@@ -12,7 +12,7 @@
 | **1** | 公式 changelog（IDE <https://kiro.dev/changelog/ide/>・CLI <https://kiro.dev/changelog/cli/>・Web <https://kiro.dev/changelog/web/>） | 版と公開日の正。「CLI 3.0 が公開されたか」のような事実の判定 | 系列ページが無い版は 404。版ごとの解説は姉妹サイトの役割 |
 | **2** | 公式ドキュメント（<https://kiro.dev/docs/>。HTML を正とし、`.md` companion を読みやすさのために使う） | 機能の定義・設定の置き場所・利用できる入口 | `.md` 版に既知の欠落がある（下記） |
 | **3** | `llms.txt`（<https://kiro.dev/llms.txt>） | docs ページの全量と、各ページの 1 行説明。IDE / CLI / Web / Crew / Mobile の区分 | 字下げをページ階層の根拠にしない |
-| **4** | `sitemap.xml`（<https://kiro.dev/sitemap.xml>） | ブログ記事の全量の機械検証（[公式ブログ索引](01_blog-index.md) の正） | `/blog/page/N/` と feed は記事ではない |
+| **4** | `sitemap.xml`（<https://kiro.dev/sitemap.xml>） | ブログ記事の全量の機械検証（[公式ブログ索引](01_blog-index.md) の収録範囲の正。索引の分類・必読度・内容説明は本サイトが各記事を読んで付けたもの） | `/blog/page/N/` と feed は記事ではない |
 | **5** | Atom フィード（<https://kiro.dev/changelog/feed.atom>） | 新しい更新の速報検知のみ | 直近の一定件数しか入らず、網羅性がない。日付の時刻はタイムゾーンの扱いが要るので使わない |
 | **1** | Kiro Crew リポジトリ（<https://github.com/kirodotdev/KiroCrew>）と公式 docs（<https://kiro.dev/docs/crew/>） | Crew の仕様・版・ガバナンス | 本サイトは Crew の版ごとの追跡はしない（姉妹サイトの役割） |
 | **1** | `aws/amazon-q-developer-cli` の README・Releases（<https://github.com/aws/amazon-q-developer-cli>） | 前身 Amazon Q Developer CLI の積極開発終了の告知と最終版 | Kiro CLI 自体の仕様の根拠にはしない |

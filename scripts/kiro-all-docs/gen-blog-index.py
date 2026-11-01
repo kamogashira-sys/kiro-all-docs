@@ -5,14 +5,16 @@
     ./scripts/kiro-all-docs/gen-blog-index.py            # 生成して書き込む
     ./scripts/kiro-all-docs/gen-blog-index.py --check    # 生成結果と現状ファイルの差分を確認（書き込まない）
 
-入力: scripts/kiro-all-docs/blog-index.tsv（ヘッダ行 + date / slug / title / tag）
-    - date  : 公式記事ページの表示日（ISO）
-    - slug  : https://kiro.dev/blog/<slug>/ の <slug>
-    - title : 公式記事の <title>（原文のまま）
-    - tag   : 本サイトの分類（製品発表／モデル／料金／事例／技術解説／コミュニティ のいずれか 1 つ）
+入力: scripts/kiro-all-docs/blog-index.tsv（ヘッダ行 + date / slug / title / tag / stars / summary）
+    - date    : 公式記事ページの表示日（ISO）
+    - slug    : https://kiro.dev/blog/<slug>/ の <slug>
+    - title   : 公式記事の <title>（原文のまま）
+    - tag     : 本サイトの分類（製品発表／モデル／料金／事例／技術解説／コミュニティ のいずれか 1 つ）
+    - stars   : 本サイトの必読度 1〜3（3 が最高）
+    - summary : 内容説明（1〜2 行。本サイトが記事本文を読んで自分の言葉で書く。原文の翻訳・抜き書きはしない）
 
-規則（作業計画 §5-5 `01_blog-index.md`・F1）:
-    - 日付・タイトル・分類タグのみ。1 行要約は付けない
+規則（作業計画 §5-5 `01_blog-index.md`。2026-11-01 のユーザー指示で要旨と必読度を追加）:
+    - 日付・タイトル・分類タグ・必読度・内容説明（1〜2 行）
     - 新しい記事が上（日付降順。同日は slug 昇順）
     - 冒頭に「収録範囲: 公式ブログ 2025-07-14〜YYYY-MM-DD 公開分（N 本）」の 1 行を置く
       （README の収録範囲行と件数が一致することを check-blog-index-count.py が検査する）
@@ -44,6 +46,12 @@ def load_rows(path):
     for r in rows:
         if r["tag"] not in TAGS:
             sys.exit(f"ERROR: 未定義の分類タグ: {r['slug']} -> {r['tag']}")
+        if r["stars"] not in ("1", "2", "3"):
+            sys.exit(f"ERROR: 必読度は 1〜3: {r['slug']} -> {r['stars']}")
+        if not r["summary"].strip() or len(r["summary"]) > 160:
+            sys.exit(f"ERROR: 内容説明が空または長すぎる（160 字以内）: {r['slug']}")
+        if "|" in r["summary"] or "|" in r["title"]:
+            sys.exit(f"ERROR: 内容説明・タイトルに '|' を含めない: {r['slug']}")
         if len(r["date"]) != 10 or r["date"][4] != "-" or r["date"][7] != "-":
             sys.exit(f"ERROR: 日付が ISO 形式でない: {r['slug']} -> {r['date']}")
     slugs = [r["slug"] for r in rows]
@@ -67,18 +75,20 @@ def render(rows):
     last = max(r["date"] for r in rows)
     n = len(rows)
     counts = Counter(r["tag"] for r in rows)
+    star_counts = Counter(r["stars"] for r in rows)
 
     out = []
     out.append("# 公式ブログ索引")
     out.append("")
     out.append(f"**収録範囲: 公式ブログ {first}〜{last} 公開分（{n} 本）**")
     out.append("")
-    out.append("kiro.dev の公式ブログ（<https://kiro.dev/blog/>）の全記事を、公開日・タイトル・本サイトの分類タグだけで一覧にしたものです。"
-               "要約は付けていません。各記事の内容は公式ページで読んでください。節目の記事の要旨は [Kiro の年表](../01_story/01_timeline.md) にあります。")
+    out.append("kiro.dev の公式ブログ（<https://kiro.dev/blog/>）の全記事を、公開日・タイトル・本サイトの分類タグ・必読度・内容説明（1〜2 行）で一覧にしたものです。"
+               "詳細は各記事の公式ページで読んでください。節目の記事を時系列で追うなら [Kiro の年表](../01_story/01_timeline.md) が向いています。")
     out.append("")
     out.append("- 日付は各記事ページの表示日です（ISO 形式 `YYYY-MM-DD`）。新しい記事が上です。")
     out.append("- タイトルは公式の原文です。")
-    out.append("- **分類タグは本サイトが付けたもの**で、公式の分類ではありません。1 記事に 1 つだけ付けています。")
+    out.append("- **分類タグ・必読度・内容説明は本サイトが付けたもの**で、公式のものではありません。分類は 1 記事に 1 つだけです。")
+    out.append("- 内容説明は本サイトが記事本文を読んで自分の言葉で書いた要旨です。原文の翻訳ではありません。数値は記事の記載どおりです。")
     out.append("- このページは `scripts/kiro-all-docs/gen-blog-index.py` が `blog-index.tsv` から生成しています。手で編集しないでください。")
     out.append("")
     out.append("## 分類タグ <!-- sources: n/a -->")
@@ -88,18 +98,28 @@ def render(rows):
     for t in TAGS:
         out.append(f"| {t} | {TAG_DESC[t]} | {counts.get(t, 0)} |")
     out.append("")
+    out.append("## 必読度 <!-- sources: n/a -->")
+    out.append("")
+    out.append("| 必読度 | 意味 | 本数 |")
+    out.append("|---|---|---|")
+    out.append(f"| ★★★ | Kiro を理解するために必読。製品・入口の誕生、ハーネス統一の設計判断、安全の仕組み、Kiro CLI の節目 | {star_counts.get('3', 0)} |")
+    out.append(f"| ★★ | Kiro を使う人は読んでおきたい。主要機能の考え方、代表的な事例、料金の節目 | {star_counts.get('2', 0)} |")
+    out.append(f"| ★ | 参考。個別のモデル追加、個別の料金・プログラム、コミュニティの告知 | {star_counts.get('1', 0)} |")
+    out.append("")
+    out.append("★★★ だけを先に読みたい人は、この表を「必読」列で絞ってください。★★★ の大半は [Kiro の年表](../01_story/01_timeline.md) の 30 本にも入っています（年表に入れていない ★★★ は Kiro Crew の software factory 2 本）。")
+    out.append("")
     out.append("## 一覧")
     out.append("")
-    out.append("| 公開日 | タイトル | 分類 |")
-    out.append("|---|---|---|")
+    out.append("| 公開日 | タイトル | 分類 | 必読 | 内容 |")
+    out.append("|---|---|---|---|---|")
     for r in ordered:
-        title = r["title"].replace("|", "\\|")
-        out.append(f"| {r['date']} | [{title}](https://kiro.dev/blog/{r['slug']}/) | {r['tag']} |")
+        stars = "★" * int(r["stars"])
+        out.append(f"| {r['date']} | [{r['title']}](https://kiro.dev/blog/{r['slug']}/) | {r['tag']} | {stars} | {r['summary']} |")
     out.append("")
     out.append("## 索引の更新方法 <!-- sources: n/a -->")
     out.append("")
     out.append("1. `make check-kiro-all-blog-sync` で公式 sitemap と `blog-index.tsv` の差分を確認する（手動のみ。CI では実行しない）")
-    out.append("2. 差分の記事ページを開き、表示日・`<title>` を `blog-index.tsv` に追記し、分類タグを付ける")
+    out.append("2. 差分の記事ページを開き、表示日・`<title>` を `blog-index.tsv` に追記し、本文を読んで分類タグ・必読度・内容説明（1〜2 行、自分の言葉で）を付ける")
     out.append("3. `./scripts/kiro-all-docs/gen-blog-index.py` で本ページを再生成する")
     out.append("4. リポジトリ README の収録範囲行を本ページの 1 行目と同じ値に更新する（`make check-kiro-all-blog-index-count` が一致を検査する）")
     out.append("")

@@ -40,7 +40,7 @@ flowchart TD
 | **Kiro CLI** | ターミナルで作業する。人の手を介さずスクリプト・CI/CD パイプラインで動かす | [猫でもわかるKiro CLI アップデート情報](https://github.com/kamogashira-sys/q-cli-docs) |
 | **Kiro Web** | クラウドの隔離環境でエージェントを動かし、ラップトップを閉じても作業が続く。各入口から起こしたクラウドセッションを一か所で見て操る。有料プラン（Pro 以上）向け | [猫でもわかるKiro Web アップデート情報](https://github.com/kamogashira-sys/kiro-web-docs) |
 | **Kiro Mobile** | 移動中にセッションを起こす・承認する・様子を見る | 公式ドキュメント <https://kiro.dev/docs/mobile/>（本シリーズに Mobile 専用サイトはありません） |
-| **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS。**ほかの 4 つと同列ではなく、Kiro CLI を呼び出して動く常駐型のアプリ**（公式の呼び方は「the outer harness」） | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
+| **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS。**ほかの 4 つと同列ではなく、Kiro CLI を呼び出して動く常駐型のアプリ**（公式の呼び方は「the outer harness」） | [猫でもわかるKiro Crew アップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
 | （注記）ACP 対応エディタ | 入口ではなく経路です。JetBrains IDE・Zed などから Kiro CLI を経由して同じエージェントを使う | <https://kiro.dev/docs/cli/acp/> |
 
 公式はこの選び方を「どれを選ぶかではなく、この仕事にはどれか」と整理しています（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）。記事の要旨は [どのアプリを選ぶか](kiro-all-docs/00_start/02_which-app.md) に、Kiro Crew が生まれた経緯は [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md) にまとめました。
@@ -96,7 +96,7 @@ Kiro IDE・Kiro CLI・Kiro Web・Kiro Crew は別製品です。同名の機能�
 | Kiro IDE | [猫でもわかるKiro IDE アップデート情報](https://github.com/kamogashira-sys/kiro-ide-docs) |
 | Kiro CLI | [猫でもわかるKiro CLI アップデート情報](https://github.com/kamogashira-sys/q-cli-docs)（リポジトリ名の `q-cli` は前身の Amazon Q Developer CLI に由来） |
 | Kiro Web | [猫でもわかるKiro Web アップデート情報](https://github.com/kamogashira-sys/kiro-web-docs) |
-| Kiro Crew | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
+| Kiro Crew | [猫でもわかるKiro Crew アップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
 
 ## 🔗 公式情報源
 

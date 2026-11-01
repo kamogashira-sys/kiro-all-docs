@@ -83,7 +83,7 @@ Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公
 - 記事: 常駐の memory、スケジュール実行、非同期の背景エージェントを束ね、「エージェントを動かす」を越えて「エージェントの一団を、スケジュールで、寝ている間も動かす」ための入口。最初の **オープンソース** のアプリで、GA 製品と同じ品質・サポートの基準を課す。「運転する」のではなく「委ねる」場所。聴衆は、1 体を操縦するより一団を問題に向けたい power user と frontier developer。社内では MeshClaw という名前で数か月使われ、6 か月弱で 39,000 人超の Amazon の builder が使い、nearly 500 人が貢献した
 - 記事の「正直な補足」: Crew を「アプリ」と呼ぶのは控えめすぎる。Kiro のエンジンの周りに作られたシステム拡張で、自前の Web・Slack・デスクトップアプリを持つ。常時稼働・複数エージェント統率・memory の多くは共有ハーネスではなく Crew 自身にあり、意図的に原則から外れて出荷した。整合させる計画はある
 - 公式ドキュメント（<https://kiro.dev/docs/crew/>、2026-10-20 更新）: 自分のハードウェアでローカルまたはリモートに動く、オープンソースの personal AI agent。persistent・self-learning・self-evolving。デスクトップアプリ・Web ダッシュボード・CLI、さらに Slack・Discord・Telegram・Teams・Webex・WeCom・WeChat (Weixin) から使える
-- 姉妹サイト: [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)。本サイトの [Kiro Crew の起源](../01_story/04_crew-origin.md) も
+- 姉妹サイト: [猫でもわかるKiro Crew アップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)。本サイトの [Kiro Crew の起源](../01_story/04_crew-origin.md) も
 
 ## 早見表
 

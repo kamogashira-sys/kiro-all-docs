@@ -84,7 +84,7 @@ kiro-cli chat
 | **Kiro IDE** | <https://kiro.dev/downloads/> からインストーラを入手（macOS・Windows・Linux）。VS Code の設定と拡張機能を取り込める（公式「Installation」の Import settings） | [猫でもわかるKiro IDE アップデート情報](https://github.com/kamogashira-sys/kiro-ide-docs) |
 | **Kiro Web** | <https://app.kiro.dev> にサインイン。有料プラン（Pro 以上）が必要で、GitHub または GitLab を接続する（公式「Authentication」の Web の節） | [猫でもわかるKiro Web アップデート情報](https://github.com/kamogashira-sys/kiro-web-docs) |
 | **Kiro Mobile（iOS）** | 公式ドキュメント <https://kiro.dev/docs/mobile/>。Web と同じアカウントでクラウドセッションを扱う | 本シリーズに Mobile 専用サイトはありません |
-| **Kiro Crew（OSS）** | リポジトリ <https://github.com/kirodotdev/KiroCrew> と公式ドキュメント <https://kiro.dev/docs/crew/> | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
+| **Kiro Crew（OSS）** | リポジトリ <https://github.com/kirodotdev/KiroCrew> と公式ドキュメント <https://kiro.dev/docs/crew/> | [猫でもわかるKiro Crew アップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
 | （注記）**ACP 対応エディタ** | 入口ではなく経路です。Kiro CLI を ACP サーバーとして JetBrains IDE・Zed などから使う（<https://kiro.dev/docs/cli/acp/>） | CLI 版サイトを参照 |
 
 組織で IAM Identity Center を使っている場合、Kiro Web とクラウドセッションは管理者が有効化する必要があります（公式「Authentication」の注記）。

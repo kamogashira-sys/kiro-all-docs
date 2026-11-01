@@ -105,7 +105,7 @@ timeline
 | Crew の導入（5 分で始める） | <https://kiro.dev/docs/crew/> |
 | インストール方法の全量 | <https://kiro.dev/docs/crew/installation/> |
 | リポジトリ（コード・設計文書・仕様） | <https://github.com/kirodotdev/KiroCrew> |
-| 版ごとの変更と日本語解説 | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)（姉妹サイト） |
+| 版ごとの変更と日本語解説 | [猫でもわかるKiro Crew アップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)（姉妹サイト） |
 
 ## 次に読む
 <!-- sources: n/a -->

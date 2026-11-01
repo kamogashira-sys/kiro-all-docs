@@ -4,7 +4,8 @@
 
 ---
 
-## 📂 このセクションのファイル <!-- sources: n/a -->
+## 📂 このセクションのファイル
+<!-- sources: n/a -->
 
 | ファイル | 内容 |
 |---------|------|
@@ -24,4 +25,12 @@
 
 - 公式ブログ <https://kiro.dev/blog/>・公式ドキュメント <https://kiro.dev/docs/>・`llms.txt` <https://kiro.dev/llms.txt>・sitemap <https://kiro.dev/sitemap.xml>
 
-[サイト全体の目次](../README.md)
+---
+
+## 関連セクション
+<!-- sources: n/a -->
+
+- [00_start](../00_start/) - はじめての人向け
+- [01_story](../01_story/) - 開発経緯・秘話
+- [02_why-kiro-cli](../02_why-kiro-cli/) - 筆者の推し
+- [サイト全体の目次](../README.md)

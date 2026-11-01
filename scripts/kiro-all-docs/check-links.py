@@ -41,6 +41,7 @@ HTML_ANCHOR_RE = re.compile(r'<a\s+(?:id|name)=["\']([^"\']+)["\']')
 
 EXCLUDE_SUBSTR = (
     "06_embedded-docs/",                 # 公式サイトページのスナップショット（GitHub 非公開・ルート直下）
+    "kiro-all-docs/05_meta/",            # 保守用テンプレート（GitHub 非公開。リンク先の例を含む）
     "work_plans/",                       # 作業計画書（GitHub 非公開・ルート直下）
     "work_records/",                     # 作業記録（GitHub 非公開）
     "_plan.md",                          # *_plan.md は gitignore 対象の計画書

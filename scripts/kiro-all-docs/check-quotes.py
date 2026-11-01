@@ -18,7 +18,7 @@ import re
 import sys
 
 DOC_ROOT = "kiro-all-docs"
-LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records")
+LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records", "05_meta")
 MAX_WORDS = 30
 QUOTE_RE = re.compile(r"[「『\"“]([^」』\"”]{20,})[」』\"”]")
 

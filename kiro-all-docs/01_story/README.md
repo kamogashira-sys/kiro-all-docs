@@ -4,7 +4,8 @@
 
 ---
 
-## 📂 このセクションのファイル <!-- sources: n/a -->
+## 📂 このセクションのファイル
+<!-- sources: n/a -->
 
 | ファイル | 内容 |
 |---------|------|
@@ -15,7 +16,8 @@
 
 ---
 
-## 読む順番 <!-- sources: n/a -->
+## 読む順番
+<!-- sources: n/a -->
 
 - 短く知りたい: [1 つのエージェント、5 つの入口](02_one-agent.md) だけ
 - 流れで知りたい: [年表](01_timeline.md) → [1 つのエージェント、5 つの入口](02_one-agent.md) → [Kiro CLI の道](03_cli-journey.md) → [Kiro Crew の起源](04_crew-origin.md)
@@ -34,4 +36,12 @@
 
 CLI 3.0 の公開有無は執筆時に公式 changelog（<https://kiro.dev/changelog/cli/>）を実測し、掲載が無いため「予告」として書いています。
 
-[サイト全体の目次](../README.md)
+---
+
+## 関連セクション
+<!-- sources: n/a -->
+
+- [00_start](../00_start/) - はじめての人向け
+- [02_why-kiro-cli](../02_why-kiro-cli/) - 筆者の推し
+- [03_reference](../03_reference/) - リファレンス
+- [サイト全体の目次](../README.md)

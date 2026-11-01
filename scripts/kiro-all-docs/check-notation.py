@@ -37,11 +37,11 @@ import re
 import sys
 
 DOC_ROOT = "kiro-all-docs"
-LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records")
+LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records", "05_meta")
 
 # 規約そのものを記述しているファイル（禁止表現の一覧等を含む）。(e)(g)(i) の対象外。
 POLICY_DOCS = (".github/WORKFLOW.md", ".github/COMMIT_CHECKLIST.md",
-               ".github/pull_request_template.md")
+               ".github/pull_request_template.md", ".github/UPDATE_GUIDE.md", "AGENTS.md")
 
 # ------------------------------------------------------------
 # (b) 製品名の揺れ
@@ -97,7 +97,7 @@ def is_local_only(path):
 def target_files():
     files = sorted(glob.glob(f"{DOC_ROOT}/**/*.md", recursive=True))
     files = [f for f in files if not is_local_only(f)]
-    files += ["README.md"] + sorted(glob.glob(".github/*.md"))
+    files += ["README.md", "AGENTS.md"] + sorted(glob.glob(".github/*.md"))
     return [f for f in files if os.path.isfile(f)]
 
 

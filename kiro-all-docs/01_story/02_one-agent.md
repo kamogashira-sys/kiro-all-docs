@@ -2,6 +2,26 @@
 
 Kiro の IDE・CLI・Web・Mobile は、見た目は別のアプリですが、中で動いている「エージェント本体」は 1 つです。公式はこれを **unified agent harness（統一エージェントハーネス）** と呼んでいます。ハーネスとは、会話の進行・ツールの実行・サブエージェントへの委任・セッション管理・設定の読み込み・モデルとの通信を担う、エージェントの中核部分です（公式ブログ「One agent, every surface」の定義）。クライアント（IDE・CLI・Web・Mobile）とハーネスの間は **Agent Client Protocol（ACP）** という公開仕様でつながっています。ACP はエディタと AI エージェントの通信を標準化する仕様で、LSP（Language Server Protocol）の AI エージェント版にあたるものです（公式ブログ「Kiro adopts ACP」<https://kiro.dev/blog/kiro-adopts-acp/>）。本ページは、なぜ 1 つにしたのか、何が変わったのかを、公式ブログと公式ドキュメントに基づいてまとめます。
 
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| [One agent, every surface: how we built the Kiro agent harness](https://kiro.dev/blog/one-agent/) | 2026-08-03 |
+| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
+| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
+| [How Kiro works](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [読者にとっての意味 ― 設定が自分に付いて回る](#読者にとっての意味--設定が自分に付いて回る)
+2. [なぜ 1 つにしたのか ― 3 つに分かれていた時代](#なぜ-1-つにしたのか--3-つに分かれていた時代)
+3. [統一して何が起きたか](#統一して何が起きたか)
+4. [例外もある ― Kiro Crew](#例外もある--kiro-crew)
+5. [どう作ったか ― 技術的な判断](#どう作ったか--技術的な判断)
+
 ## 読者にとっての意味 ― 設定が自分に付いて回る
 
 公式ドキュメント「How Kiro works」（更新 2026-10-23）は、この仕組みを「Kiro is one agent, available everywhere you work.」と要約しています（<https://kiro.dev/docs/how-kiro-works/>）。使う側にとって大事なのは次の 3 点です。
@@ -81,16 +101,8 @@ Kiro Crew は Amazon 社内で MeshClaw という名前で始まり、2026-08-04
 
 ハーネスがプロンプト 1 回ごとに回す 6 段階（文脈の組み立て → モデル → 権限評価 → ツール実行 → 結果の反映 → compaction）は、公式ドキュメント「How Kiro works」の「Anatomy of a turn」に図解があります（<https://kiro.dev/docs/how-kiro-works/>）。
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| [One agent, every surface: how we built the Kiro agent harness](https://kiro.dev/blog/one-agent/) | 2026-08-03 |
-| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
-| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
-| [How Kiro works](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [Kiro CLI の道 ― Amazon Q Developer CLI から V3 へ](03_cli-journey.md)
 - [なぜ筆者は Kiro CLI が好きなのか](../02_why-kiro-cli/01_why-i-love-kiro-cli.md)

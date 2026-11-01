@@ -12,7 +12,7 @@
 
 - **誰が**: Amazon Web Services（AWS）が提供するエージェントです。Kiro IDE・Kiro CLI は AWS Customer Agreement のもとで提供されています（<https://kiro.dev/license/>）。
 - **何をしてくれる**: あなたのリポジトリを読み、ファイルを編集し、シェルコマンドやテストを実行し、必要なら Web を調べます。ツールを動かす前に権限ルールを評価し、決めていない操作は許可を求めます（公式「How Kiro works」の 6 段階 <https://kiro.dev/docs/how-kiro-works/>）。
-- **試すには**: 新規ユーザーは無料の **Kiro Free**（月 50 クレジット、一部モデルのみ）から始まります。GitHub・Google・AWS Builder ID のアカウントでサインインできます（<https://kiro.dev/docs/billing/>・<https://kiro.dev/docs/getting-started/authentication/>）。
+- **試すには**: 新規ユーザーは無料の **Kiro Free** から始まります（50 クレジット。クレジットは請求サイクルごとに補充され、使えるモデルは一部に限られます）。2026-11-01 以降、Free から初めて有料プランに上げると、その月の残りの Pro 料金が無料になり、12 か月有効の 500 トライアルクレジットが付きます。GitHub・Google・AWS Builder ID のアカウントでサインインできます（<https://kiro.dev/docs/billing/>・<https://kiro.dev/docs/getting-started/authentication/>）。
 - **用語**: 本サイトで繰り返し出る言葉は 4 つです。**ハーネス**（エージェント本体。会話・ツール実行・権限・モデル呼び出しを担う部分）、**steering**（プロジェクトの約束事を書いた Markdown。毎回エージェントに渡る）、**hooks**（ファイル保存やツール実行などのイベントで自動実行する処理）、**MCP**（Model Context Protocol。外部ツールをエージェントに接続する規格）。公式の説明は <https://kiro.dev/docs/steering/>・<https://kiro.dev/docs/hooks/>・<https://kiro.dev/docs/mcp/>。
 
 ```mermaid
@@ -41,7 +41,7 @@ flowchart TD
 | **Kiro Web** | クラウドの隔離環境でエージェントを動かし、ラップトップを閉じても作業が続く。各入口から起こしたクラウドセッションを一か所で見て操る。有料プラン（Pro 以上）向け | [猫でもわかるKiro Web アップデート情報](https://github.com/kamogashira-sys/kiro-web-docs) |
 | **Kiro Mobile** | 移動中にセッションを起こす・承認する・様子を見る | 公式ドキュメント <https://kiro.dev/docs/mobile/>（本シリーズに Mobile 専用サイトはありません） |
 | **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS。**ほかの 4 つと同列ではなく、Kiro CLI を呼び出して動く常駐型のアプリ**（公式の呼び方は「the outer harness」） | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
-| （6 番目）ACP 対応エディタ | JetBrains IDE・Zed などから Kiro CLI を経由して同じエージェントを使う | <https://kiro.dev/docs/cli/acp/> |
+| （注記）ACP 対応エディタ | 入口ではなく経路です。JetBrains IDE・Zed などから Kiro CLI を経由して同じエージェントを使う | <https://kiro.dev/docs/cli/acp/> |
 
 公式はこの選び方を「どれを選ぶかではなく、この仕事にはどれか」と整理しています（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）。記事の要旨は [どのアプリを選ぶか](kiro-all-docs/00_start/02_which-app.md) に、Kiro Crew が生まれた経緯は [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md) にまとめました。
 
@@ -123,11 +123,12 @@ Kiro IDE・Kiro CLI・Kiro Web・Kiro Crew は別製品です。同名の機能�
 
 ## 🤝 コントリビュート
 
+- [更新手順書](.github/UPDATE_GUIDE.md)
 - [ドキュメント作成ワークフロー](.github/WORKFLOW.md)
 - [コミット前チェックリスト](.github/COMMIT_CHECKLIST.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 
-誤りの指摘・改善提案は Issues へお寄せください。
+誤りの指摘・改善提案は [Issues](https://github.com/kamogashira-sys/kiro-all-docs/issues) へお寄せください。更新の手順は [更新手順書](.github/UPDATE_GUIDE.md) に、エージェント（Kiro CLI）向けの作業規約は [AGENTS.md](AGENTS.md) にあります。
 
 ## 📄 ライセンス
 

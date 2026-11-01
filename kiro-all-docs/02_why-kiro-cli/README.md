@@ -4,7 +4,8 @@
 
 ---
 
-## 📂 このセクションのファイル <!-- sources: n/a -->
+## 📂 このセクションのファイル
+<!-- sources: n/a -->
 
 | ファイル | 内容 |
 |---------|------|
@@ -17,4 +18,12 @@
 
 このセクションで触れる Kiro CLI の事実は、[Kiro CLI の道](../01_story/03_cli-journey.md)（公式ブログ・changelog に基づく）と、姉妹サイト [猫でもわかるKiro CLI アップデート情報](https://github.com/kamogashira-sys/q-cli-docs) で確認できます。筆者の記事の原文は <https://qiita.com/kamogashira> にあります。
 
-[サイト全体の目次](../README.md)
+---
+
+## 関連セクション
+<!-- sources: n/a -->
+
+- [00_start](../00_start/) - はじめての人向け
+- [01_story](../01_story/) - 開発経緯・秘話
+- [03_reference](../03_reference/) - リファレンス
+- [サイト全体の目次](../README.md)

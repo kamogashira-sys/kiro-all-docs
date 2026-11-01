@@ -8,6 +8,9 @@
 # 作業計画書（本サイトの計画・レビュー記録はローカル管理）
 work_plans/
 
+# 保守用テンプレート（姉妹サイトと同じ配置。更新手順書の正本は公開の .github/UPDATE_GUIDE.md）
+kiro-all-docs/05_meta/
+
 # 公式サイトページのスナップショット（kiro.dev の複製。再配布しない）
 06_embedded-docs/
 

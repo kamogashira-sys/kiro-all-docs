@@ -2,6 +2,29 @@
 
 Kiro Crew は、Kiro の 5 つの入口のうち唯一の **オープンソース** で、唯一「ハーネス統一の原則から意図的に外れて出荷された」ものです。本ページは、Amazon 社内の side project として生まれてから、3 人のエンジニアが週 1,000 PR をマージする「software factory」になるまでを、公式ブログ 4 本と公式ドキュメントに基づいて追います。
 
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| [Introducing Kiro Crew](https://kiro.dev/blog/introducing-kiro-crew/) | 2026-08-04 |
+| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
+| [How we built a software factory with Kiro Crew to merge 1,000 PRs in a week](https://kiro.dev/blog/software-factory-1000-prs/) | 2026-09-18 |
+| [Keeping a software factory stable at 1,000 PRs a week](https://kiro.dev/blog/software-factory-stability/) | 2026-10-26 |
+| [Crew Quick start（公式ドキュメント）](https://kiro.dev/docs/crew/) | 2026-10-20 |
+| [kiro.dev/crew（製品ページ）](https://kiro.dev/crew/) | — |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [社内の side project「MeshClaw」](#社内の-side-projectmeshclaw)
+2. [2026-08-04 ― OSS 公開](#2026-08-04--oss-公開)
+3. [なぜ「原則から外れて」出荷したのか](#なぜ原則から外れて出荷したのか)
+4. [2026-09-18 ― 3 人で週 1,000 PR](#2026-09-18--3-人で週-1000-pr)
+5. [2026-10-26 ― 週 1,000 PR を壊さずに続ける](#2026-10-26--週-1000-pr-を壊さずに続ける)
+6. [公式ドキュメントで確かめる](#公式ドキュメントで確かめる)
+
 ```mermaid
 timeline
   title Kiro Crew の節目（公式ブログの公開日）
@@ -13,7 +36,7 @@ timeline
 
 （図は公式ブログの公開日をもとに本サイトが作成。「2026-03」は 2026-10-26 の記事が「In early March」と述べていることに基づき月単位でのみ示しています。MeshClaw の開発開始日は公式に記載がなく未確認です）
 
-## 1. 社内の side project「MeshClaw」
+## 社内の side project「MeshClaw」
 
 公式ブログ「Introducing Kiro Crew」（2026-08-04、<https://kiro.dev/blog/introducing-kiro-crew/>）によると、Kiro Crew は Amazon 社内の side project **MeshClaw** として始まりました。作者は Bolin Chen・Zejiang (Joe) Guo・Zezhen Xu の 3 人です。
 
@@ -23,7 +46,7 @@ timeline
 
 まず自分たち用に作り、ほかの Amazon の builder が使い始め、各自が自分のワークフローの隙間を埋める部品を足していった。記事はその結果を「6 か月弱で 39,000 人超の Amazon の builder が採用し、nearly 500 contributors が 597 回の更新を週平均 143 コミットのペースで出した」と書いています。この「貢献が積み重なった」ことが OSS 公開の決め手だった、というのが記事の説明です。
 
-## 2. 2026-08-04 ― OSS 公開
+## 2026-08-04 ― OSS 公開
 
 同じ記事は、公開時の Kiro Crew を次のように説明しています。
 
@@ -41,7 +64,7 @@ timeline
 
 公式サイトの説明文（<https://kiro.dev/crew/>）は Kiro Crew を「文脈を覚え、あなたの働き方を学び、固有のツールとワークフローを横断して調整する、常駐型のオープンソース開発ワークスペース」と要約しています（本サイトの訳）。公式ドキュメント（<https://kiro.dev/docs/crew/>）では、インストールの導線（デスクトップアプリ、1 行インストール `curl -fsSL https://download.crew.kiro.dev/cli.sh | sh`、ソースビルド、Docker）と、Slack・Discord・Telegram・Teams・Webex・WeCom・WeChat (Weixin) の各チャネル対応が書かれています。
 
-## 3. なぜ「原則から外れて」出荷したのか
+## なぜ「原則から外れて」出荷したのか
 
 公式ブログ「Which Kiro app should I pick?」（2026-08-12、<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）は、Kiro Crew を「app」と呼ぶのは控えめすぎると書いています。Crew は Kiro のエンジンの周りに作られたシステム拡張で、Web・Slack・デスクトップという自前のアプリを持ちます。
 
@@ -49,7 +72,7 @@ timeline
 
 ハーネス統一の経緯そのものは [1 つのエージェント、5 つの入口](02_one-agent.md) に書きました。Crew は、その原則に「例外」があることを公式自身が明示した事例です。
 
-## 4. 2026-09-18 ― 3 人で週 1,000 PR
+## 2026-09-18 ― 3 人で週 1,000 PR
 
 公式ブログ「How we built a software factory with Kiro Crew to merge 1,000 PRs in a week」（2026-09-18、<https://kiro.dev/blog/software-factory-1000-prs/>）は、Kiro Crew を専任で作る 3 人のエンジニアが、1 週間で 1,000 件の PR（1 日 120 件超、すべて CI とレビューを通過）をマージしたと報告しています。記事は、そこに至る働き方の変化を 5 段階に整理しています。
 
@@ -65,7 +88,7 @@ timeline
 
 読者への助言としては「今のセッション数を数えて自分の段階を知る」「段階 2→3 が一番効く（まずエージェントに memory を与える）」「毎日の雑務を 1 つスケジュールに渡す」「オーケストレータより先に pipeline を作る（GitHub Issue のラベルがキューになる）」「段階 5 から始めない」「ガバナンスは初日から」が並んでいます。
 
-## 5. 2026-10-26 ― 週 1,000 PR を壊さずに続ける
+## 2026-10-26 ― 週 1,000 PR を壊さずに続ける
 
 続編「Keeping a software factory stable at 1,000 PRs a week」（2026-10-26、<https://kiro.dev/blog/software-factory-stability/>）は、「人が読んでいないコードに責任を持てるのか」という問いに、**信頼の根拠を人のレビューから自動テストと検査に移す** ことで答えています。記事が述べる要点です。
 
@@ -84,18 +107,8 @@ timeline
 | リポジトリ（コード・設計文書・仕様） | <https://github.com/kirodotdev/KiroCrew> |
 | 版ごとの変更と日本語解説 | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)（姉妹サイト） |
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| [Introducing Kiro Crew](https://kiro.dev/blog/introducing-kiro-crew/) | 2026-08-04 |
-| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
-| [How we built a software factory with Kiro Crew to merge 1,000 PRs in a week](https://kiro.dev/blog/software-factory-1000-prs/) | 2026-09-18 |
-| [Keeping a software factory stable at 1,000 PRs a week](https://kiro.dev/blog/software-factory-stability/) | 2026-10-26 |
-| [Crew Quick start（公式ドキュメント）](https://kiro.dev/docs/crew/) | 2026-10-20 |
-| [kiro.dev/crew（製品ページ）](https://kiro.dev/crew/) | — |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [1 つのエージェント、5 つの入口](02_one-agent.md)
 - [どのアプリを選ぶか](../00_start/02_which-app.md)

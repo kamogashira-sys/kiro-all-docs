@@ -10,7 +10,20 @@ kiro.dev の公式ブログ（<https://kiro.dev/blog/>）の全記事を、公�
 - 内容説明は本サイトが記事本文を読んで自分の言葉で書いた要旨です。原文の翻訳ではありません。数値は記事の記載どおりです。
 - このページは `scripts/kiro-all-docs/gen-blog-index.py` が `blog-index.tsv` から生成しています。手で編集しないでください。
 
-## 分類タグ <!-- sources: n/a -->
+**出典**（公開日は各記事ページの表示日）: 公式ブログ <https://kiro.dev/blog/>（全記事の一覧は <https://kiro.dev/sitemap.xml> で機械検証）。
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [分類タグ](#分類タグ)
+2. [必読度](#必読度)
+3. [一覧](#一覧)
+4. [索引の更新方法](#索引の更新方法)
+
+## 分類タグ
+<!-- sources: n/a -->
 
 | タグ | 意味 | 本数 |
 |---|---|---|
@@ -21,7 +34,8 @@ kiro.dev の公式ブログ（<https://kiro.dev/blog/>）の全記事を、公�
 | 技術解説 | 仕組み・設計判断・使い方の解説 | 25 |
 | コミュニティ | ハッカソン・コミュニティハブ・周年など | 8 |
 
-## 必読度 <!-- sources: n/a -->
+## 必読度
+<!-- sources: n/a -->
 
 | 必読度 | 意味 | 本数 |
 |---|---|---|
@@ -149,14 +163,17 @@ kiro.dev の公式ブログ（<https://kiro.dev/blog/>）の全記事を、公�
 | 2025-07-14 | [Announcing the Code with Kiro Hackathon](https://kiro.dev/blog/code-with-kiro-hackathon/) | コミュニティ | ★ | プレビュー公開と同日に発表された最初のハッカソン。Kiro で動くアプリを作るのが条件で、賞金総額 10 万ドル、4 つの部門。 |
 | 2025-07-14 | [Introducing Kiro](https://kiro.dev/blog/introducing-kiro/) | 製品発表 | ★★★ | Kiro の誕生記事。プロンプトだけで作ったものを本番に持っていく難しさに対し、Specs と Hooks を中核にした AI IDE として発表。待機リスト制のプレビュー。 |
 
-## 索引の更新方法 <!-- sources: n/a -->
+## 索引の更新方法
+<!-- sources: n/a -->
 
 1. `make check-kiro-all-blog-sync` で公式 sitemap と `blog-index.tsv` の差分を確認する（手動のみ。CI では実行しない）
 2. 差分の記事ページを開き、表示日・`<title>` を `blog-index.tsv` に追記し、本文を読んで分類タグ・必読度・内容説明（1〜2 行、自分の言葉で）を付ける
 3. `./scripts/kiro-all-docs/gen-blog-index.py` で本ページを再生成する
 4. リポジトリ README の収録範囲行を本ページの 1 行目と同じ値に更新する（`make check-kiro-all-blog-index-count` が一致を検査する）
+5. 年表に入れるかどうかの基準と TSV の行書式は [更新手順書](../../.github/UPDATE_GUIDE.md) の §6 型 A と付録B にある
 
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [Kiro の年表 ― 節目の記事だけを選んで](../01_story/01_timeline.md)
 - [情報源の使い分け](03_sources.md)

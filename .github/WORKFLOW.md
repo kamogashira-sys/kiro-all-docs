@@ -2,6 +2,8 @@
 
 本サイト「猫でもわかるKiro 入門 ― IDE・CLI・Web・Mobile・Crew まとめ」は、Kiro 全体を Kiro を知らない人に案内する **非公式** の日本語サイトです。機能の網羅は姉妹サイト（IDE・CLI・Web・Crew）に任せ、本サイトは **紹介・案内** に役割を絞ります。
 
+更新の手順（契機の検知・更新の型・ページの書式・検証・禁止事項）の正本は [更新手順書](UPDATE_GUIDE.md) です。本書はその要約です。Kiro CLI で作業するときは [AGENTS.md](../AGENTS.md) が更新手順書を読み込みます。
+
 ## 1. 一次情報
 
 | 対象 | 一次情報 |
@@ -26,7 +28,12 @@ GitHub Issues・他者ブログ・姉妹サイト（自サイト）は根拠に�
 9. 「Kiro」「AWS」はプレーンテキストで、真実の事実を述べる文脈のみで使う（AWS Trademark Guidelines §13）。非公式であることを README と免責に明記する。
 10. 筆者の所属企業名と、所属を推測させる記述は書かない。
 
-## 3. 表記
+## 3. 表記と書式
+
+- ページの書式は更新手順書 §7（出典ブロックは冒頭・`## 📑 このページの内容` の目次・H2 に番号なし・末尾は `## 次に読む`）。`make check-kiro-all-structure` が検査する。
+- `<!-- sources: n/a -->` は見出しの次の行に置く（見出し行に書かない）。
+- 実機の値（版番号・コマンド出力）は `02_why-kiro-cli/` 以外に書かない。
+- 入口は 5 つ（IDE・CLI・Web・Mobile・Crew）。ACP 対応エディタは注記。
 
 - 日付は ISO `YYYY-MM-DD`。
 - 禁止表現: 「おそらく」「たぶん」「一般的に」「通常」「最低〜以上」など推測・曖昧表現。
@@ -37,7 +44,7 @@ GitHub Issues・他者ブログ・姉妹サイト（自サイト）は根拠に�
 
 ```bash
 make check-kiro-all-ignore   # 公開範囲（最初に実行）
-make check-kiro-all-all      # links / notation / sources / quotes / first-person（警告のみ）
+make check-kiro-all-all      # links / notation / sources / quotes / first-person（警告のみ）/ blog-index-count / structure
 make check-kiro-all-urls-important   # 外部 URL（手動・push 時 CI）
 ```
 
@@ -45,4 +52,4 @@ make check-kiro-all-urls-important   # 外部 URL（手動・push 時 CI）
 
 ## 5. ローカル管理領域（GitHub 非公開）
 
-`work_plans/`・`06_embedded-docs/`（kiro.dev の複製。再配布しない）・`work_records/`。`make check-kiro-all-ignore` で除外を確認します。
+`work_plans/`・`kiro-all-docs/05_meta/`（テンプレート）・`06_embedded-docs/`（kiro.dev の複製。再配布しない）・`work_records/`。`make check-kiro-all-ignore` で除外を確認します。

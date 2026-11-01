@@ -4,6 +4,18 @@
 
 筆者は 2025 年 6 月に Amazon Q Developer CLI（Kiro CLI の前身）を使い始めてから、JAWS-UG（AWS のユーザーコミュニティ）での登壇内容を Qiita 記事に再構成してきました。本サイトの入口で紹介している 3 本と、その土台になった「猫でもわかる Q CLI・Kiro CLI」シリーズ 6 本を、公開日の新しい順に並べます。
 
+**出典**（公開日は Qiita の記事メタデータ）: 筆者の Qiita 記事（<https://qiita.com/kamogashira>）。
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [本サイトが紹介する 3 本](#本サイトが紹介する-3-本)
+2. [「猫でもわかる Q CLI・Kiro CLI」シリーズ（6 本）](#猫でもわかる-q-clikiro-cliシリーズ6-本)
+3. [出会いの記事](#出会いの記事)
+4. [姉妹サイトとの関係](#姉妹サイトとの関係)
+
 ## 本サイトが紹介する 3 本
 
 ### 猫でもわかるKiro Web ― 端末を閉じても働き続けるKiroの正体
@@ -59,7 +71,8 @@
 
 Qiita 記事は登壇の再構成で、「その時点のスナップショット」と記事自身が注記しています。版ごとの更新を追い続けているのは姉妹サイト 4 本（[Kiro IDE](https://github.com/kamogashira-sys/kiro-ide-docs)・[Kiro CLI](https://github.com/kamogashira-sys/q-cli-docs)・[Kiro Web](https://github.com/kamogashira-sys/kiro-web-docs)・[Kiro Crew](https://github.com/kamogashira-sys/kiro-crew-docs)）で、最新の仕様はそちらと公式ドキュメントで確認してください。
 
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [なぜ筆者は Kiro CLI が好きなのか](01_why-i-love-kiro-cli.md)
 - [Kiro CLI の道](../01_story/03_cli-journey.md)

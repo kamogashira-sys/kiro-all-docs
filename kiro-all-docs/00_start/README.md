@@ -4,7 +4,8 @@
 
 ---
 
-## 📂 このセクションのファイル <!-- sources: n/a -->
+## 📂 このセクションのファイル
+<!-- sources: n/a -->
 
 | ファイル | 内容 |
 |---------|------|
@@ -14,7 +15,8 @@
 
 ---
 
-## 読む順番 <!-- sources: n/a -->
+## 読む順番
+<!-- sources: n/a -->
 
 1. [Kiro とは](01_what-is-kiro.md) ― 1 つのエージェントがどう動き、どこに設定を置くか
 2. [どのアプリを選ぶか](02_which-app.md) ― 自分の仕事に合う入口
@@ -30,4 +32,12 @@
 - [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/)（公式ブログ、2026-08-12）
 - [Installation](https://kiro.dev/docs/getting-started/installation/)・[Authentication](https://kiro.dev/docs/getting-started/authentication/)（公式ドキュメント）
 
-[サイト全体の目次](../README.md)
+---
+
+## 関連セクション
+<!-- sources: n/a -->
+
+- [01_story](../01_story/) - 開発経緯・秘話
+- [02_why-kiro-cli](../02_why-kiro-cli/) - 筆者の推し
+- [03_reference](../03_reference/) - リファレンス
+- [サイト全体の目次](../README.md)

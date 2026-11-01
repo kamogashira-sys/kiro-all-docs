@@ -1,12 +1,33 @@
 # Kiro とは ― 1 つのエージェント、どこでも同じ
 
-公式ドキュメントは Kiro を次のように定義しています（<https://kiro.dev/llms.txt> 冒頭。本サイトの訳）。
-
-> Kiro は、1 つの統一エージェントハーネスを中心に作られた AI コーディングエージェントで、どの入口でも同じエージェント・同じセッション・同じ設定が使える。Kiro IDE、Kiro CLI、Web、モバイル（iOS）、エージェントのチームを統率する Kiro Crew、そして ACP 対応のあらゆるエディタで使える。
+公式ドキュメントの索引 `llms.txt`（<https://kiro.dev/llms.txt>）は冒頭で、Kiro を「1 つの統一エージェントハーネス（unified agent harness）を中心に作られた AI コーディングエージェント」と定義し、Kiro IDE・Kiro CLI・Web・Mobile（iOS）・Kiro Crew・ACP 対応エディタのどこからでも同じエージェント・同じセッション・同じ設定が使える、と説明しています（要旨）。
 
 本ページは「How Kiro works」（公式ドキュメント、2026-10-23 更新、<https://kiro.dev/docs/how-kiro-works/>）を土台に、Kiro を初めて知る人向けに全体像を 3 つに分けて説明します。(1) **何をしてくれるか**（ハーネスの 1 ターン）、(2) **何を設定できるか**（機能の一覧）、(3) **設定がどこに置かれ、どこまで効くか**。各機能の詳しい使い方は公式ドキュメントと姉妹サイトに任せ、ここでは 1 行ずつにとどめます。
 
-## 1. 何をしてくれるか ― 1 ターンの 6 段階
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| [How Kiro works（公式ドキュメント）](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
+| [llms.txt（公式ドキュメント索引。各ページの説明文）](https://kiro.dev/llms.txt) | — |
+| [Configuration scopes](https://kiro.dev/docs/configuration/) | 2026-10-21 |
+| [Workflows](https://kiro.dev/docs/workflows/) | 2026-10-31 |
+| [Local command sandbox](https://kiro.dev/docs/sandbox/) | 2026-10-29 |
+| [Agent Client Protocol (ACP)](https://kiro.dev/docs/acp/) | 2026-10-01 |
+| [Memory](https://kiro.dev/docs/memory/) | 2026-10-29 |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [何をしてくれるか ― 1 ターンの 6 段階](#何をしてくれるか--1-ターンの-6-段階)
+2. [何を設定できるか ― ハーネスが持つ機能](#何を設定できるか--ハーネスが持つ機能)
+3. [設定はどこに置かれ、どこまで効くか](#設定はどこに置かれどこまで効くか)
+4. [どこで動くか](#どこで動くか)
+5. [入口が足すもの](#入口が足すもの)
+
+## 何をしてくれるか ― 1 ターンの 6 段階
 
 Kiro にプロンプトを送ると、どの入口からでも同じループが回ります。公式「How Kiro works」の「Anatomy of a turn」を図にしたものです。
 
@@ -37,7 +58,7 @@ flowchart TD
 
 公式ドキュメントが強調するのは、**この 6 段階が「1 つのアプリに後付けされた機能」ではなく、ハーネスの各段階だ** という点です。権限ルールを 1 回書けば段階 3 がどの入口でも同じように守られ、steering ファイルを 1 枚書けば段階 1 がどの入口でも同じように整います。
 
-## 2. 何を設定できるか ― ハーネスが持つ機能
+## 何を設定できるか ― ハーネスが持つ機能
 
 公式「How Kiro works」の「What the harness owns」の表に、`llms.txt` の各ページ説明を 1 行ずつ添えたものです（本サイトの訳）。
 
@@ -64,7 +85,7 @@ flowchart TD
 
 公式は「まだすべての機能がすべての入口に届いているわけではない」として、各機能ページの冒頭に **利用できる入口の表（availability table）** を置いています。ある機能が自分の入口で使えるかは、その表で確認してください。
 
-## 3. 設定はどこに置かれ、どこまで効くか
+## 設定はどこに置かれ、どこまで効くか
 
 「設定が自分に付いて回る」仕組みの正体は、設定ファイルの置き場所が 4 つのスコープに分かれていることです（公式「How Kiro works」の「Your setup travels with you」）。
 
@@ -77,7 +98,7 @@ flowchart TD
 
 これが、Kiro Web や Mobile が「設定なしで」プロジェクトの agents と steering を使える理由です。IDE と CLI がローカルで読んでいるのと同じ `.kiro/` をリポジトリから読んでいるからです。優先順位の完全な説明は [Configuration scopes](https://kiro.dev/docs/configuration/) にあります。
 
-## 4. どこで動くか
+## どこで動くか
 
 | 入口 | エージェントが動く場所 |
 |---|---|
@@ -86,7 +107,7 @@ flowchart TD
 
 クラウドセッションは特定のアプリではなく **アカウント** に属するため、ある入口で始めて別の入口で続けられます（公式「How Kiro works」の「Where the agent runs」）。
 
-## 5. 入口が足すもの
+## 入口が足すもの
 
 入口は薄い皮ではありません。プラットフォーム側がうまくやれる場面では、入口が自前のツールをハーネスの組み込みツールの代わりに提供できます（例: IDE はファイル操作にエディタの API を使い、エディタ固有のコード解析を足す）。公式「How Kiro works」の「What each surface adds」の表を本サイトが訳したものです。
 
@@ -99,19 +120,8 @@ flowchart TD
 
 どの入口をどんな仕事に使うかは [どのアプリを選ぶか](02_which-app.md) に、「なぜ 1 つのハーネスになったか」は [1 つのエージェント、5 つの入口](../01_story/02_one-agent.md) に書きました。
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| [How Kiro works（公式ドキュメント）](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
-| [llms.txt（公式ドキュメント索引。各ページの説明文）](https://kiro.dev/llms.txt) | — |
-| [Configuration scopes](https://kiro.dev/docs/configuration/) | 2026-10-21 |
-| [Workflows](https://kiro.dev/docs/workflows/) | 2026-10-31 |
-| [Local command sandbox](https://kiro.dev/docs/sandbox/) | 2026-10-29 |
-| [Agent Client Protocol (ACP)](https://kiro.dev/docs/acp/) | 2026-10-01 |
-| [Memory](https://kiro.dev/docs/memory/) | 2026-10-29 |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [どのアプリを選ぶか](02_which-app.md)
 - [はじめ方 ― Kiro CLI を 3 ステップで](03_get-started.md)

@@ -2,13 +2,26 @@
 
 本サイトと公式ドキュメントに繰り返し出る言葉を、公式ドキュメント各ページの説明文（`llms.txt` の 1 行説明と各ページの冒頭）を本サイトの言葉で要約して並べたものです。英語の用語は公式の表記のまま使っています。詳しい仕様は各出典ページで確認してください。
 
+**出典**（更新日は公式ページの表示日）: 表中の各公式ページ（<https://kiro.dev/docs/>）と `llms.txt`（<https://kiro.dev/llms.txt>）。
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [全体の構造](#全体の構造)
+2. [設定と文脈](#設定と文脈)
+3. [安全と権限](#安全と権限)
+4. [モデルと実行](#モデルと実行)
+5. [日本語の言い換えについて](#日本語の言い換えについて)
+
 ## 全体の構造
 
 | 用語 | 意味 | 出典 |
 |---|---|---|
 | **agent harness（エージェントハーネス）** | エージェントの本体。会話の進行、ツールの実行、文脈の管理、権限の評価、モデルとの通信を担う。Kiro ではこれが 1 つに統一されており、独立したプロセスとして動く | [How Kiro works](https://kiro.dev/docs/how-kiro-works/) |
 | **unified agent harness（統一エージェントハーネス）** | IDE・CLI・Web・Mobile が共通に使う 1 つのハーネス。2026-08-03 の公式ブログで、3 つあったハーネスを統一した経緯が公表された | [One agent, every surface](https://kiro.dev/blog/one-agent/) |
-| **surface（サーフェス、入口）** | ハーネスを使うための窓口。IDE・CLI・Web・Mobile の 4 つに Kiro Crew と ACP 対応エディタを加えた呼び方を本サイトでは「5 つの入口」としている | [How Kiro works](https://kiro.dev/docs/how-kiro-works/) |
+| **surface（サーフェス、入口）** | ハーネスを使うための窓口。本サイトは IDE・CLI・Web・Mobile・Crew の **5 つ** を「入口」と数える。公式 `llms.txt` はこれに「ACP 対応エディタ」も挙げるが、Kiro のアプリではなく Kiro CLI を経由する経路なので、本サイトは入口に数えず注記にとどめる | [How Kiro works](https://kiro.dev/docs/how-kiro-works/)・[llms.txt](https://kiro.dev/llms.txt) |
 | **V2 / V3** | Kiro CLI のハーネスの世代。V2 = 従来の CLI 固有のハーネス、V3 = 統一ハーネス。CLI の版番号（2.x・3.0）とは別の言葉 | [What's new in CLI V3](https://kiro.dev/docs/cli/v3/) |
 | **ACP（Agent Client Protocol）** | エディタやアプリとエージェントをつなぐオープンなプロトコル。Kiro 自身の入口も、JetBrains・Zed などの対応エディタも、同じ ACP でハーネスに接続する。MCP とは役割が異なる（MCP はエージェントと外部ツールをつなぐ） | [ACP](https://kiro.dev/docs/acp/) |
 | **cloud session（クラウドセッション）** | 自分のマシンではなく管理されたクラウドのサンドボックスで動くセッション。アカウントに属するので、ある入口で始めて別の入口から続けられる | [Cloud sessions](https://kiro.dev/docs/cloud-sessions/) |
@@ -60,11 +73,13 @@
 | **Automations（自動化）** | Kiro Web で、繰り返しの作業をスケジュールで自律セッションとして実行し PR を開く機能 | [Introducing automations](https://kiro.dev/blog/introducing-automations/) |
 | **Crew Mode** | Kiro Crew で、個々のセッションの外にいてセッションの作成・監視・判定・次の決定を行うエージェント | [How we built a software factory](https://kiro.dev/blog/software-factory-1000-prs/) |
 
-## 日本語の言い換えについて <!-- sources: n/a -->
+## 日本語の言い換えについて
+<!-- sources: n/a -->
 
 本サイトは英語の用語を公式の表記のまま使い、初出で括弧内に日本語の説明を添えています。「ハーネス」「入口（サーフェス）」のように日本語を使っている箇所もありますが、公式の訳語ではなく本サイトの言い換えです。
 
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [Kiro とは](../00_start/01_what-is-kiro.md)
 - [情報源の使い分け](03_sources.md)

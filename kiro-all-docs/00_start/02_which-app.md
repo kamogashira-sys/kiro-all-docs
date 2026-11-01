@@ -2,7 +2,30 @@
 
 Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公式ブログ「Which Kiro app should I pick?」（2026-08-12、Massimo Re Ferre、<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）は、この問いに「それは状況による」と答えたうえで、**問いの立て方自体を変える** ことを勧めています。「どれを選ぶか（which one）」ではなく「この仕事にはどれか（which one for this）」。本ページはその記事の要旨と、各入口の公式ドキュメントの冒頭をまとめたものです。
 
-## 1. なぜ選択を間違えようがないのか
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
+| [How Kiro works（「What each surface adds」）](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
+| [IDE（公式ドキュメント）](https://kiro.dev/docs/ide/) | 2026-08-04 |
+| [CLI（公式ドキュメント）](https://kiro.dev/docs/cli/) | 2026-08-04 |
+| [Kiro Web（公式ドキュメント）](https://kiro.dev/docs/web/) | 2026-10-23 |
+| [Mobile（公式ドキュメント）](https://kiro.dev/docs/mobile/) | 2026-08-04 |
+| [Crew Quick start（公式ドキュメント）](https://kiro.dev/docs/crew/) | 2026-10-20 |
+| [Agentic engineering in the cloud](https://kiro.dev/blog/agentic-engineering-in-the-cloud/) | 2026-09-03 |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [なぜ選択を間違えようがないのか](#なぜ選択を間違えようがないのか)
+2. [公式が挙げる 2 つの原則](#公式が挙げる-2-つの原則)
+3. [入口ごとの説明](#入口ごとの説明)
+4. [早見表](#早見表)
+
+## なぜ選択を間違えようがないのか
 
 記事（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）の前提は [ハーネス統一](../01_story/02_one-agent.md) です。Kiro のエージェント本体（ハーネス）は 1 つで、IDE・CLI・Web はそれを使うための「アプリ」にすぎない。ハーネスが「何ができるか」を決め、アプリが「どう体験するか」を決める。両者は意図的に切り離されています。
 
@@ -16,7 +39,7 @@ Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公
 
 記事の言い方では、入口を選ぶことは「壁に囲まれた庭」を選ぶことではなく「玄関」を選ぶことです。どの入口も他を置き換えるためには作られておらず、重なりがあるのは欠陥ではなく、1 つの土台の上に複数の体験層があることの自然な形だ、と説明しています。
 
-## 2. 公式が挙げる 2 つの原則
+## 公式が挙げる 2 つの原則
 
 記事の「The principles behind these decisions」（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）の要旨です。
 
@@ -25,7 +48,7 @@ Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公
 | **ソフトウェア配送のライフサイクルに仕える** | 作る対象は「ソフトウェアを出荷する人」のためのアプリ。開発者がまず、その周りの PM・アーキテクト・QA・UX・運用も含む。試す問いは「この人は開発者か」ではなく「これはソフトウェアを出荷する行為に仕えるか」。万人向けの汎用 AI アシスタントは作らない |
 | **builder のいる場所で出会い、前へ進む手助けをする** | ファイルと関数の中で生きる「code-first」の人と、エージェントを指揮してコードは副産物と見る「agent-first」の人がいる。業界の大半はまだ前者で、後者は小さいが業界の向かう先。agent-first の世界に向けて作りつつ、両者の間に簡単な「乗り口」を置く |
 
-## 3. 入口ごとの説明
+## 入口ごとの説明
 
 記事の「The apps, one by one」と、各入口の公式ドキュメント冒頭（`.md` companion）に基づきます。
 
@@ -62,7 +85,7 @@ Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公
 - 公式ドキュメント（<https://kiro.dev/docs/crew/>、2026-10-20 更新）: 自分のハードウェアでローカルまたはリモートに動く、オープンソースの personal AI agent。persistent・self-learning・self-evolving。デスクトップアプリ・Web ダッシュボード・CLI、さらに Slack・Discord・Telegram・Teams・Webex・WeCom・WeChat (Weixin) から使える
 - 姉妹サイト: [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs)。本サイトの [Kiro Crew の起源](../01_story/04_crew-origin.md) も
 
-## 4. 早見表
+## 早見表
 
 記事の「cheat sheet」（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）を本サイトが訳したものです。成熟度は **記事公開時点（2026-08-12）** の表記で、Web はその後 GA になっています（上記）。
 
@@ -76,20 +99,8 @@ Kiro は IDE・CLI・Web・Mobile・Crew の 5 つの入口を持ちます。公
 
 記事の結びは、どの答えも「仕事」であって「アイデンティティ」ではない、という点です。机では IDE、パイプラインでは CLI、電車では Mobile、常時稼働には Crew。同じエンジンの上で全部を同時に使ってよい。「どのアプリを、永遠に」ではなく「この仕事、この瞬間、この気分にはどのアプリか」。
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
-| [How Kiro works（「What each surface adds」）](https://kiro.dev/docs/how-kiro-works/) | 2026-10-23 |
-| [IDE（公式ドキュメント）](https://kiro.dev/docs/ide/) | 2026-08-04 |
-| [CLI（公式ドキュメント）](https://kiro.dev/docs/cli/) | 2026-08-04 |
-| [Kiro Web（公式ドキュメント）](https://kiro.dev/docs/web/) | 2026-10-23 |
-| [Mobile（公式ドキュメント）](https://kiro.dev/docs/mobile/) | 2026-08-04 |
-| [Crew Quick start（公式ドキュメント）](https://kiro.dev/docs/crew/) | 2026-10-20 |
-| [Agentic engineering in the cloud](https://kiro.dev/blog/agentic-engineering-in-the-cloud/) | 2026-09-03 |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [はじめ方 ― Kiro CLI を 3 ステップで、ほかの入口は公式へ](03_get-started.md)
 - [Kiro とは](01_what-is-kiro.md)

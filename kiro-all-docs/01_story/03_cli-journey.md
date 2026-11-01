@@ -2,6 +2,36 @@
 
 Kiro CLI は、2025-11-17 に Amazon Q Developer CLI の技術を引き継いで生まれ、約 1 年で「別の見た目の CLI」から「Kiro IDE・Kiro Web と同じエージェント本体を端末で動かすクライアント」へ変わりました。本ページは、その節目を公式ブログ・公式 changelog・公式リポジトリの告知に基づいて追います。
 
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| [aws/amazon-q-developer-cli README・Releases](https://github.com/aws/amazon-q-developer-cli) | v1.19.7: 2025-11-17 |
+| [Bring Kiro agents to your terminal with Kiro CLI](https://kiro.dev/blog/introducing-kiro-cli/) | 2025-11-17 |
+| [Kiro is generally available](https://kiro.dev/blog/general-availability/) | 2025-11-17 |
+| [Specialized IDEs deserve AI too: Kiro adopts ACP](https://kiro.dev/blog/kiro-adopts-acp/) | 2026-02-05 |
+| [A new look for the Kiro CLI](https://kiro.dev/blog/new-look-for-cli/) | 2026-03-23 |
+| [Planview saves 40+ hours per audit cycle](https://kiro.dev/blog/automating-soc-2-compliance/) | 2026-04-10 |
+| [Kiro CLI 2.0](https://kiro.dev/blog/cli-2-0/)・[introducing headless mode](https://kiro.dev/blog/introducing-headless-mode/) | 2026-04-13 |
+| [Root cause in 33 seconds](https://kiro.dev/blog/root-cause-in-33s/) | 2026-04-16 |
+| [Changelog CLI 2.8: CLI v3 Early Access](https://kiro.dev/changelog/cli/2-8/) | 2026-06-17 |
+| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
+| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
+| [Changelog CLI 2.36](https://kiro.dev/changelog/cli/2-36/) | 2026-10-29 |
+| [What's new in CLI V3（公式ドキュメント）](https://kiro.dev/docs/cli/v3/) | 2026-10-31 |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [前史 ― Amazon Q Developer CLI の終わりと Kiro CLI の始まり](#前史--amazon-q-developer-cli-の終わりと-kiro-cli-の始まり)
+2. [2026 年前半 ― 端末の外へ、そして新しい顔](#2026-年前半--端末の外へそして新しい顔)
+3. [2026 年 6 月 ― V3 早期提供: 同じハーネスが端末に来た](#2026-年-6-月--v3-早期提供-同じハーネスが端末に来た)
+4. [2026 年 10 月 ― V3 が既定に](#2026-年-10-月--v3-が既定に)
+5. [導入事例 ― 公式ブログが紹介した 2 件（年表の外）](#導入事例--公式ブログが紹介した-2-件年表の外)
+6. [公式ドキュメントで確かめる](#公式ドキュメントで確かめる)
+
 ```mermaid
 timeline
   title Kiro CLI の節目（公式の公開日）
@@ -12,7 +42,7 @@ timeline
   2026-04-13 : CLI 2.0（headless・Windows ネイティブ・TUI が既定）
   2026-06-17 : 2.8.0 で V3 を早期提供（kiro-cli --v3）
   2026-10-09 : V3 を既定にするロールアウトを告知（10-12 開始）
-  2026-10 末 : CLI 3.0 を予告（公式 changelog の最新は 2.36・2026-10-29。3.0 は未掲載）
+             : CLI 3.0 を「10 月末まで」に公開すると予告（公開の有無は本文「現在の状態」）
 ```
 
 （図は公式の公開日をもとに本サイトが作成）
@@ -68,25 +98,8 @@ Kiro CLI の前身は Amazon Q Developer CLI（Q CLI）です。公式リポジ�
 | 版ごとの変更 | <https://kiro.dev/changelog/cli/> |
 | V2 時代から全版の日本語解説 | [猫でもわかるKiro CLI アップデート情報](https://github.com/kamogashira-sys/q-cli-docs)（姉妹サイト） |
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| [aws/amazon-q-developer-cli README・Releases](https://github.com/aws/amazon-q-developer-cli) | v1.19.7: 2025-11-17 |
-| [Bring Kiro agents to your terminal with Kiro CLI](https://kiro.dev/blog/introducing-kiro-cli/) | 2025-11-17 |
-| [Kiro is generally available](https://kiro.dev/blog/general-availability/) | 2025-11-17 |
-| [Specialized IDEs deserve AI too: Kiro adopts ACP](https://kiro.dev/blog/kiro-adopts-acp/) | 2026-02-05 |
-| [A new look for the Kiro CLI](https://kiro.dev/blog/new-look-for-cli/) | 2026-03-23 |
-| [Planview saves 40+ hours per audit cycle](https://kiro.dev/blog/automating-soc-2-compliance/) | 2026-04-10 |
-| [Kiro CLI 2.0](https://kiro.dev/blog/cli-2-0/)・[introducing headless mode](https://kiro.dev/blog/introducing-headless-mode/) | 2026-04-13 |
-| [Root cause in 33 seconds](https://kiro.dev/blog/root-cause-in-33s/) | 2026-04-16 |
-| [Changelog CLI 2.8: CLI v3 Early Access](https://kiro.dev/changelog/cli/2-8/) | 2026-06-17 |
-| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
-| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
-| [Changelog CLI 2.36](https://kiro.dev/changelog/cli/2-36/) | 2026-10-29 |
-| [What's new in CLI V3（公式ドキュメント）](https://kiro.dev/docs/cli/v3/) | 2026-10-31 |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [1 つのエージェント、5 つの入口](02_one-agent.md)
 - [なぜ筆者は Kiro CLI が好きなのか](../02_why-kiro-cli/01_why-i-love-kiro-cli.md)

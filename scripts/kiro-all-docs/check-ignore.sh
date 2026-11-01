@@ -16,6 +16,7 @@ fail=0
 LOCAL_ONLY=(
   "work_plans/x_plan.md"
   "work_plans/202611010705_作業計画書_Kiroまとめサイト.md"
+  "kiro-all-docs/05_meta/templates/worklog.md"
   "06_embedded-docs/x.html"
   "06_embedded-docs/blog/one-agent.html"
   "work_records/20260801/x_worklog.md"
@@ -41,6 +42,9 @@ PUBLIC=(
   "kiro-all-docs/02_why-kiro-cli/01_why-i-love-kiro-cli.md"
   "scripts/kiro-all-docs/check-ignore.sh"
   "Makefile"
+  "AGENTS.md"
+  ".github/UPDATE_GUIDE.md"
+  "scripts/kiro-all-docs/check-structure.py"
 )
 
 echo "=== ローカル管理対象が除外されていることを確認 ==="

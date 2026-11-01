@@ -92,7 +92,7 @@ else
   python3 - > /tmp/ka_urls.txt <<'PY'
 import glob, os, re
 
-EXCLUDE = ("06_embedded-docs", "work_plans", "work_records")
+EXCLUDE = ("06_embedded-docs", "work_plans", "work_records", "05_meta")
 
 # 雛形 URL（プレースホルダ入り）。実 URL として叩くと必ず失敗する。
 PLACEHOLDER = re.compile(r"[<>{}]|（|\((?:スラッグ|パス|slug|path)\)")

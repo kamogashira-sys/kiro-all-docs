@@ -19,7 +19,7 @@ import re
 import sys
 
 DOC_ROOT = "kiro-all-docs"
-LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records")
+LOCAL_ONLY = ("06_embedded-docs", "work_plans", "work_records", "05_meta")
 OPINION_DIR = "kiro-all-docs/02_why-kiro-cli/"
 FIRST_PERSON_RE = re.compile(r"私|筆者は|筆者が|推し")
 # 推しページのタイトル「なぜ筆者は Kiro CLI が好きなのか」へのリンク文言は許容する

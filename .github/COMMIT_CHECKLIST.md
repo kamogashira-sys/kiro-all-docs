@@ -2,7 +2,7 @@
 
 ## 公開範囲（最初に）
 
-- [ ] `make check-kiro-all-ignore` が exit 0（`work_plans/`・`06_embedded-docs/`・`work_records/` が追跡されていない。ローカル絶対パスが公開ファイルに無い）
+- [ ] `make check-kiro-all-ignore` が exit 0（`work_plans/`・`kiro-all-docs/05_meta/`・`06_embedded-docs/`・`work_records/` が追跡されていない。ローカル絶対パスが公開ファイルに無い）
 
 ## 内容
 
@@ -19,6 +19,8 @@
 ## 表記
 
 - [ ] 日付は ISO `YYYY-MM-DD`。取得日を本文に書いていない
+- [ ] 実機の版番号・コマンド出力を `02_why-kiro-cli/` 以外に書いていない
+- [ ] ページの骨格が更新手順書 §7 どおり（出典ブロックは冒頭・目次・H2 に番号なし・末尾は「次に読む」）
 - [ ] 禁止表現（おそらく・たぶん・一般的に・通常・最低〜以上）が無い
 - [ ] kiro.dev の URL は末尾スラッシュ付き
 

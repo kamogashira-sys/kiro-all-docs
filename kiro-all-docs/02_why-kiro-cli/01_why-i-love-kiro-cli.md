@@ -2,6 +2,33 @@
 
 > **本ページは筆者の意見です。** 事実の記述には公式の出典を付けていますが、「好き」「推し」の部分は筆者個人の選好であり、他のツールとの優劣を述べるものではありません。筆者は Claude Code と OpenAI Codex も使っています。本文中の「聞き取り」は、本サイトを作るときに筆者が自分の体験を 10 の質問に答えて整理した問答（2026-11-01）を指します。
 
+**出典**（公開日・更新日は公式ページの表示日）:
+
+| 出典 | 公開・更新日 |
+|---|---|
+| Qiita [「Amazon Q CLI でゲームを作ろう」をやってみた](https://qiita.com/kamogashira/items/59c3e641d984920c22a3) | 2025-06-16 |
+| Qiita [猫でもわかるKiro CLI(CDKコーディング編)](https://qiita.com/kamogashira/items/0e9c9e4e60b032ad9621) | 2026-04-23 |
+| [Bring Kiro agents to your terminal with Kiro CLI](https://kiro.dev/blog/introducing-kiro-cli/) | 2025-11-17 |
+| [Specialized IDEs deserve AI too: Kiro adopts ACP](https://kiro.dev/blog/kiro-adopts-acp/) | 2026-02-05 |
+| [Kiro CLI 2.0](https://kiro.dev/blog/cli-2-0/) | 2026-04-13 |
+| [One agent, every surface](https://kiro.dev/blog/one-agent/) | 2026-08-03 |
+| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
+| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
+| [Enterprise Billing](https://kiro.dev/docs/enterprise/billing/)・[Available models](https://kiro.dev/docs/models/available-models/)・[Compaction](https://kiro.dev/docs/compaction/) | 公式ドキュメント |
+
+---
+
+## 📑 このページの内容
+<!-- sources: n/a -->
+
+1. [出会い ― 2025 年 6 月、日本語の指示だけでゲームができた](#出会い--2025-年-6-月日本語の指示だけでゲームができた)
+2. [好きなところ 1 ― 「厳選して足す」姿勢](#好きなところ-1--厳選して足す姿勢)
+3. [好きなところ 2 ― マニュアル車の手触り](#好きなところ-2--マニュアル車の手触り)
+4. [好きなところ 3 ― 端末から出ずに済み、端末の外からも呼べる](#好きなところ-3--端末から出ずに済み端末の外からも呼べる)
+5. [好きなところ 4 ― モデルを選べて、請求は AWS にまとまる](#好きなところ-4--モデルを選べて請求は-aws-にまとまる)
+6. [V3 になって ― 戸惑ったことと、よかったこと](#v3-になって--戸惑ったこととよかったこと)
+7. [まとめ](#まとめ)
+
 ## 出会い ― 2025 年 6 月、日本語の指示だけでゲームができた
 
 筆者が初めて Amazon Q Developer CLI（Kiro CLI の前身）を使ったのは、2025-06-09 の JAWS-UG 横浜支部のイベントでした。Builder ID を作り、Q CLI を入れ、チャットを開くという 3 ステップの準備のあと、日本語の指示を 3 回出しただけで国旗当てクイズ（HTML・CSS・JavaScript）ができあがりました。そのときの気持ちは、Qiita 記事「『Amazon Q CLI でゲームを作ろう』をやってみた」（2025-06-16）に書いています。
@@ -61,21 +88,8 @@ V3（統一ハーネス）への移行で、筆者が「一番対応に時間が
 
 どの入口が合うかは人と仕事によって違います。公式の選び方は「Which Kiro app should I pick?」（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）が、「どれを選ぶかではなく、この仕事にはどれか」と整理しています。
 
-## 出典
-
-| 出典 | 公開・更新日 |
-|---|---|
-| Qiita [「Amazon Q CLI でゲームを作ろう」をやってみた](https://qiita.com/kamogashira/items/59c3e641d984920c22a3) | 2025-06-16 |
-| Qiita [猫でもわかるKiro CLI(CDKコーディング編)](https://qiita.com/kamogashira/items/0e9c9e4e60b032ad9621) | 2026-04-23 |
-| [Bring Kiro agents to your terminal with Kiro CLI](https://kiro.dev/blog/introducing-kiro-cli/) | 2025-11-17 |
-| [Specialized IDEs deserve AI too: Kiro adopts ACP](https://kiro.dev/blog/kiro-adopts-acp/) | 2026-02-05 |
-| [Kiro CLI 2.0](https://kiro.dev/blog/cli-2-0/) | 2026-04-13 |
-| [One agent, every surface](https://kiro.dev/blog/one-agent/) | 2026-08-03 |
-| [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
-| [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
-| [Enterprise Billing](https://kiro.dev/docs/enterprise/billing/)・[Available models](https://kiro.dev/docs/models/available-models/)・[Compaction](https://kiro.dev/docs/compaction/) | 公式ドキュメント |
-
-## 次に読む <!-- sources: n/a -->
+## 次に読む
+<!-- sources: n/a -->
 
 - [はじめ方 ― Kiro CLI を 3 ステップで](../00_start/03_get-started.md)
 - [Kiro CLI の道](../01_story/03_cli-journey.md)

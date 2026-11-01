@@ -52,7 +52,7 @@ help:
 # ------------------------------------------------------------
 # まとめて実行
 # ------------------------------------------------------------
-check-kiro-all-all: check-kiro-all-links check-kiro-all-notation check-kiro-all-sources check-kiro-all-quotes check-kiro-all-first-person check-kiro-all-blog-index-count
+check-kiro-all-all: check-kiro-all-links check-kiro-all-notation check-kiro-all-sources check-kiro-all-quotes check-kiro-all-first-person check-kiro-all-blog-index-count check-kiro-all-structure
 	@echo ""
 	@echo "=== check-kiro-all-all: すべて完了 ==="
 
@@ -81,6 +81,9 @@ check-kiro-all-first-person:
 
 check-kiro-all-blog-index-count:
 	@$(SCRIPTS)/check-blog-index-count.py
+
+check-kiro-all-structure:
+	@$(SCRIPTS)/check-structure.py
 
 gen-kiro-all-blog-index:
 	@$(SCRIPTS)/gen-blog-index.py

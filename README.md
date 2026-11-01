@@ -13,16 +13,20 @@
 
 ```mermaid
 flowchart TD
+  subgraph CREW["Kiro Crew（OSS・常駐型。公式の呼び方は「外側のハーネス」）"]
+    direction TB
+    CAPP["自前のアプリ<br/>デスクトップ・Web ダッシュボード・TUI・Slack など"] --> CCORE["Crew 自身が持つ機能<br/>memory・スケジュール実行・複数エージェントの統率"]
+  end
+  CCORE -- "Kiro CLI を呼び出す" --> CLI
   IDE["Kiro IDE<br/>エディタ"] --> ACP
   CLI["Kiro CLI<br/>ターミナル・CI/CD"] --> ACP
   WEB["Kiro Web<br/>ブラウザ・クラウド"] --> ACP
   MOB["Kiro Mobile<br/>iOS"] --> ACP
-  CREW["Kiro Crew<br/>常時稼働の統率（OSS）"] -.-> ACP
   ACP["Agent Client Protocol"] --> H["統一エージェントハーネス<br/>ツール・文脈・権限・モデル"]
   H --> CFG[".kiro/ と ~/.kiro/ の設定が<br/>どの入口でも同じように効く"]
 ```
 
-（公式ドキュメント「How Kiro works」と公式ブログの説明をもとに本サイトが作成。Kiro Crew は Kiro CLI を介して Kiro のハーネスの上に作られた OSS で、常時稼働や記憶の一部は共有ハーネスの外に実装されています。出典: <https://kiro.dev/blog/introducing-kiro-crew/>・<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）
+（公式ドキュメント「How Kiro works」と公式ブログの説明をもとに本サイトが作成。IDE・CLI・Web・Mobile は ACP でハーネスに直接つながる入口です。**Kiro Crew は同列ではありません。** 公開時点では Kiro CLI の上で動き（Crew が CLI を呼び出す）、自前のアプリ群を持つ「システム拡張」で、常時稼働・memory・複数エージェントの統率は共有ハーネスではなく Crew 自身にあります。公式ブログはこれを「the outer harness」と呼び、将来ハーネスと整合させる計画と述べています。出典: <https://kiro.dev/blog/introducing-kiro-crew/>・<https://kiro.dev/blog/which-kiro-app-should-i-pick/>。経緯は [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md)）
 
 ## 🚪 5 つの入口
 
@@ -32,7 +36,7 @@ flowchart TD
 | **Kiro CLI** | ターミナルで作業する。人の手を介さずスクリプト・CI/CD パイプラインで動かす | [猫でもわかるKiro CLI アップデート情報](https://github.com/kamogashira-sys/q-cli-docs) |
 | **Kiro Web** | クラウドの隔離環境でエージェントを動かし、ラップトップを閉じても作業が続く。各入口から起こしたクラウドセッションを一か所で見て操る。有料プラン（Pro 以上）向け | [猫でもわかるKiro Web アップデート情報](https://github.com/kamogashira-sys/kiro-web-docs) |
 | **Kiro Mobile** | 移動中にセッションを起こす・承認する・様子を見る | 公式ドキュメント <https://kiro.dev/docs/mobile/>（本シリーズに Mobile 専用サイトはありません） |
-| **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
+| **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS。**ほかの 4 つと同列ではなく、Kiro CLI を呼び出して動く常駐型のアプリ**（公式の呼び方は「the outer harness」） | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
 | （6 番目）ACP 対応エディタ | JetBrains IDE・Zed などから Kiro CLI を経由して同じエージェントを使う | <https://kiro.dev/docs/cli/acp/> |
 
 公式はこの選び方を「どれを選ぶかではなく、この仕事にはどれか」と整理しています（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）。記事の要旨は [どのアプリを選ぶか](kiro-all-docs/00_start/02_which-app.md) に、Kiro Crew が生まれた経緯は [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md) にまとめました。

@@ -2,6 +2,10 @@
 
 **Kiro は 1 つの AI コーディングエージェントに、5 つの入口がある。** このサイトは、Kiro を知らない人に向けて「Kiro とは何か」「なぜ今か」「どこから始めるか」を一次情報（kiro.dev の公式ブログ・ドキュメント・changelog）に基づいて案内する **非公式** の日本語サイトです。機能やバージョンごとの詳細は、入口ごとの姉妹サイト 4 本に任せています。
 
+> ## 📖 [サイト本体（目次）はこちら → `kiro-all-docs/`](kiro-all-docs/README.md)
+>
+> 全 12 ページ＋4 セクション目次。はじめての人向け（Kiro とは・どのアプリを選ぶか・はじめ方）／開発経緯・秘話（年表・ハーネス統一・Kiro CLI の道・Kiro Crew の起源）／筆者の推し／リファレンス（公式ブログ索引・用語集・情報源）
+
 収録範囲: 公式ブログ 2025-07-14〜2026-10-30 公開分（113 本）を読んで書いています（全件の一覧・必読度・内容説明は [公式ブログ索引](kiro-all-docs/03_reference/01_blog-index.md)）。
 
 ## 🐱 30 秒で分かる Kiro
@@ -70,7 +74,7 @@ kiro-cli chat
 | ターミナル派・CI/CD 担当 | [Kiro CLI の道](kiro-all-docs/01_story/03_cli-journey.md) → [なぜ筆者は Kiro CLI が好きなのか](kiro-all-docs/02_why-kiro-cli/01_why-i-love-kiro-cli.md) → [CLI 版サイト](https://github.com/kamogashira-sys/q-cli-docs) |
 | 旧 Amazon Q Developer CLI を使っていた | [Kiro CLI の道](kiro-all-docs/01_story/03_cli-journey.md)（2025-11-17 以降の経緯）→ [CLI 版サイト](https://github.com/kamogashira-sys/q-cli-docs)（旧 Q CLI のアーカイブあり） |
 | 公式ブログを自分で追いたい | [公式ブログ索引](kiro-all-docs/03_reference/01_blog-index.md)（全 113 本）→ [情報源の使い分け](kiro-all-docs/03_reference/03_sources.md) |
-| 姉妹サイトの読者 | [目次](kiro-all-docs/README.md) |
+| 姉妹サイトの読者・全部読みたい | [サイト本体の目次（`kiro-all-docs/`）](kiro-all-docs/README.md) |
 
 ## ✍️ 筆者の記事（Qiita）
 

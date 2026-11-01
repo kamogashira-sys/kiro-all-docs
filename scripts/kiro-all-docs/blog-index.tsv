@@ -1,0 +1,114 @@
+date	slug	title	tag
+2025-07-14	code-with-kiro-hackathon	Announcing the Code with Kiro Hackathon	コミュニティ
+2025-07-14	introducing-kiro	Introducing Kiro	製品発表
+2025-07-15	from-chat-to-specs-deep-dive	From chat to specs: a deep dive into AI-assisted development with Kiro	技術解説
+2025-07-15	kiro-and-the-future-of-software-development	Kiro and the future of AI spec-driven software development	技術解説
+2025-07-16	automate-your-development-workflow-with-agent-hooks	Automate your development workflow with Kiro’s AI agent hooks	技術解説
+2025-07-16	how-kiro-helped-me-code-a-game	How Kiro helped me code a game	事例
+2025-07-24	this-is-fine-really	This is fine... (really)	コミュニティ
+2025-08-01	pricing-waitlist-updates	Kiro pricing update + waitlist invites coming soon	料金
+2025-08-07	understanding-kiro-pricing-specs-vibes-usage-tracking	Understanding Kiro's pricing: specs, vibes, and usage tracking	料金
+2025-08-13	unlock-your-development-productivity-with-kiro-and-mcp	Unlock your development productivity with Kiro and Model Context Protocol (MCP)	技術解説
+2025-08-15	pricing-plans-are-live	Kiro pricing plans are now live	料金
+2025-08-22	important-pricing-updates	Important Kiro pricing updates	料金
+2025-08-28	free-until-september-15	Use Kiro for free until September 15	料金
+2025-09-15	new-pricing-plans-and-auto	Announcing new pricing plans and Auto, our new agent	料金
+2025-10-09	how-i-stopped-worrying-about-readme-files	How I stopped worrying about ReadMe files	技術解説
+2025-10-16	waitlist-is-over	The wait(list) is over, get started with Kiro today	製品発表
+2025-10-21	multimodal-development-with-kiro-from-design-to-done	Multimodal development with Kiro: from design to done	技術解説
+2025-10-23	teaching-kiro-new-tricks-with-agent-steering-and-mcp	Teaching Kiro new tricks with agent steering and MCP	技術解説
+2025-10-31	introducing-remote-mcp	Introducing remote MCP servers	製品発表
+2025-10-31	kiroween-2025	This is Kiroween	コミュニティ
+2025-11-04	stop-repeating-yourself	Stop repeating yourself: why global steering is the AI context layer you’ve been missing	技術解説
+2025-11-11	making-credits-go-further	Making your Kiro credits go further	料金
+2025-11-17	general-availability	Kiro is generally available: Build with your team in the IDE and terminal	製品発表
+2025-11-17	introducing-checkpointing	Never lose your way: Introducing checkpointing in Kiro	製品発表
+2025-11-17	introducing-kiro-cli	Bring Kiro agents to your terminal with Kiro CLI	製品発表
+2025-11-17	one-year-free-for-startups-2025	Introducing the Kiro startup credits program	料金
+2025-11-17	property-based-testing	Does your code match your spec?	技術解説
+2025-11-24	introducing-opus-45	Introducing Opus 4.5 in Kiro	モデル
+2025-12-02	introducing-kiro-autonomous-agent	Introducing Kiro autonomous agent	製品発表
+2025-12-03	introducing-powers	Introducing Kiro powers	製品発表
+2025-12-17	multi-root-workspaces	Multi-root workspaces in Kiro: work across projects, not just inside one	製品発表
+2025-12-18	property-based-testing-fixed-security-bug	Property-Based Testing Caught a Security Bug I Never Would Have Found	事例
+2026-01-14	empowering-kiro-with-ide-diagnostics	Empowering Kiro with IDE diagnostics	技術解説
+2026-01-16	run-all-tasks	Run all tasks: the feature we refused to ship (until now)	製品発表
+2026-02-05	custom-subagents-skills-and-enterprise-controls	Kiro 0.9: Custom subagents in the IDE, new enterprise controls, and granular code review	製品発表
+2026-02-05	kiro-adopts-acp	Specialized IDEs deserve AI too: Kiro adopts ACP	製品発表
+2026-02-05	opus-4-6	Opus 4.6 is now available in Kiro	モデル
+2026-02-05	refactoring-made-right	Refactoring made right: how program analysis makes AI agents safe and reliable	技術解説
+2026-02-10	open-weight-models	Open weight models are here: more choice, more speed, less cost	モデル
+2026-02-13	enterprise-identity-and-usage-metrics	Enterprise identity and usage metrics	製品発表
+2026-02-17	sonnet-4-6	Claude Sonnet 4.6 is now available in Kiro	モデル
+2026-02-18	introducing-govcloud	Kiro loves regulated workloads	製品発表
+2026-02-18	specs-bugfix-and-design-first	New spec types: fix bugs and build on top of existing apps	製品発表
+2026-02-19	bug-fix-paradox	The bug fix paradox: why AI agents keep breaking working code	技術解説
+2026-02-23	hidden-inefficiencies-ai-coding	The hidden inefficiencies in AI coding (and how we find them)	技術解説
+2026-02-27	surgical-precision-with-ast	Surgical precision with AST-based code editing in Kiro	技術解説
+2026-03-12	enterprise-governance-mcp-and-models	Enterprise governance: control your MCP servers and models	製品発表
+2026-03-18	introducing-kiro-students-tier	Introducing the Kiro Students tier	料金
+2026-03-23	new-look-for-cli	A new look for the Kiro CLI	製品発表
+2026-03-24	from-copilots-to-coworkers	From copilots to coworkers at AAAI: the gap between agentic research and production	技術解説
+2026-03-26	bringing-agentic-ai-to-silicon-development	Bringing agentic AI to silicon development	事例
+2026-04-02	minimax-m25-and-glm-5	MiniMax M2.5 and GLM-5 are now in Kiro	モデル
+2026-04-07	bringing-back-startup-credits	We’re bringing back the Kiro startup credits program	料金
+2026-04-10	automating-soc-2-compliance	Planview saves 40+ hours per audit cycle by automating SOC 2 compliance with Kiro CLI	事例
+2026-04-13	cli-2-0	Kiro CLI 2.0: a new look and feel, headless CI/CD pipelines, and Windows support	製品発表
+2026-04-13	introducing-headless-mode	Run Kiro CLI programmatically: introducing headless mode	製品発表
+2026-04-16	root-cause-in-33s	Root cause in 33 seconds: How Kiro CLI saved 4 years of build time	事例
+2026-04-17	opus-4-7	Opus 4.7 is now available in Kiro	モデル
+2026-04-23	introducing-community-and-labs	Build with Kiro: Introducing the community hub and Kiro Labs	コミュニティ
+2026-05-07	introducing-kiro-ambassadors	Introducing Kiro Ambassadors	コミュニティ
+2026-05-08	new-paid-tier-bonus	More room to explore: $20 paid tier sign-up bonus	料金
+2026-05-12	deep-spec-analysis	Requirements analysis: catching requirement bugs before they become code	製品発表
+2026-05-12	faster-smarter-specs	Specs just got faster (and smarter)	製品発表
+2026-05-18	introducing-kiro-web	Introducing Kiro Web	製品発表
+2026-05-21	how-tdd-should-feel	Test Driven Development (TDD) with Kiro: this is how it should feel	技術解説
+2026-05-29	opus-4-8	Opus 4.8 is now available in Kiro	モデル
+2026-06-11	kiro-pro-max	Introducing Kiro Pro Max ($100/mo): more credits, less guesswork	料金
+2026-06-11	kiro-web-specs-gitlab	New in Kiro Web: Build with Spec, GitLab, and more	製品発表
+2026-06-15	kiro-merch-store	Introducing the Kiro merch store	コミュニティ
+2026-06-17	introducing-kiro-for-ios	Introducing Kiro for iOS	製品発表
+2026-06-18	introducing-automations	Introducing automations in Kiro on the web	製品発表
+2026-06-25	from-openapi-swagger-to-test-suite-in-seconds-with-kiro	From OpenAPI/Swagger specifications to test suite in seconds with Kiro	技術解説
+2026-06-25	introducing-agent-focus	Introducing Agent Focus	製品発表
+2026-06-26	coordinating-changes-across-gitlab-and-github-in-one-session	One Task, Two Providers: Coordinating Changes Across GitLab and GitHub in one session	技術解説
+2026-07-01	sonnet-5	Sonnet 5 is now available in Kiro	モデル
+2026-07-02	cap-prepay-overage	Set a cap on overage spend, or pre-pay for it	料金
+2026-07-13	birthday-2026	Welcome to birthday week	コミュニティ
+2026-07-14	gpt-5-6	GPT‑5.6 is now available in Kiro	モデル
+2026-07-14	one-year	One year of Kiro: a look back, and a look ahead	コミュニティ
+2026-07-16	one-year-startups	Celebrating the builders: how founders are shipping faster with Kiro	事例
+2026-07-16	one-year-students	One year of Kiro: how students are building the future, right now	事例
+2026-07-20	kiro-and-snyk-guardrails	How Kiro and Snyk create multi-layered security guardrails	技術解説
+2026-07-24	opus-5	Claude Opus 5 is now available in Kiro	モデル
+2026-07-31	gpt-5-6-pricing	GPT‑5.6 update: lower credit multipliers for Terra and Luna	料金
+2026-08-03	one-agent	One agent, every surface: how we built the Kiro agent harness	技術解説
+2026-08-04	introducing-kiro-crew	Introducing Kiro Crew	製品発表
+2026-08-07	powers-supports-plugins	Kiro powers now support Agent Plugins	製品発表
+2026-08-12	which-kiro-app-should-i-pick	Which Kiro app should I pick?	技術解説
+2026-08-18	cloud-sessions	Close the laptop, keep the agent: building with cloud sessions	製品発表
+2026-08-21	continuous-prompt-evaluation	Continuous Prompt Evaluation: How We Use LLM Judges and Live Signals to Improve Kiro Agent Quality	技術解説
+2026-08-21	trust-agent-triage	How We Learned to Trust an AI Agent to Triage Production Incidents	事例
+2026-08-26	diagnostics-over-time	Are AI coding agents actually getting better?	技術解説
+2026-09-03	agentic-engineering-in-the-cloud	Agentic engineering in the cloud	製品発表
+2026-09-08	iso-27001	Kiro adds ISO/IEC 27001:2022 coverage	製品発表
+2026-09-08	students-2026	A free year of Kiro, now for students around the world	料金
+2026-09-14	gpt-5-6-1m-context	GPT‑5.6 models now support 1 million token context windows in Kiro	モデル
+2026-09-14	tackling-technical-debt-at-scale-with-autonomous-mode	Tackling technical debt at scale with autonomous mode in Kiro Web	事例
+2026-09-16	fable-5-1	Claude Fable 5.1 is now available in Kiro	モデル
+2026-09-18	software-factory-1000-prs	How we built a software factory with Kiro Crew to merge 1,000 PRs in a week	事例
+2026-09-28	opus-5-5	Claude Opus 5.5 is now available in Kiro	モデル
+2026-09-30	introducing-workflows	Introducing Kiro workflows	製品発表
+2026-10-02	sonnet-5-5	Claude Sonnet 5.5 is now available in Kiro	モデル
+2026-10-09	cli-3	Kiro CLI V3 is rolling out as the default experience	製品発表
+2026-10-13	sign-in-controls	Introducing improved enterprise sign-in controls	製品発表
+2026-10-14	local-sandboxing	Local sandboxing in Kiro: keep agent commands within boundaries	製品発表
+2026-10-15	kimi-k3	Kimi K3 model is now available in Kiro	モデル
+2026-10-20	how-kiro-fixes-itself	How Kiro fixes itself, and how we keep the fixes honest	技術解説
+2026-10-20	memory-in-ide-cli	Introducing memory in Kiro IDE and CLI	製品発表
+2026-10-26	haiku-5-5	Claude Haiku 5.5 is now available in Kiro	モデル
+2026-10-26	software-factory-stability	Keeping a software factory stable at 1,000 PRs a week	事例
+2026-10-27	kiros-new-free-trial-gives-you-500-extra-credits	Kiro’s new free trial gives you 500 extra credits	料金
+2026-10-28	41-more-universities	Kiro for Students expands to 41 more universities	料金
+2026-10-30	spec-it-safe	Spec it safe: shift left and harden your specs with security requirements	技術解説

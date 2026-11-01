@@ -35,6 +35,8 @@ Kiro CLI の前身は Amazon Q Developer CLI（Q CLI）です。公式リポジ�
 
 公式ドキュメント「What's new in CLI V3」（<https://kiro.dev/docs/cli/v3/>）は、V2 と V3 の対応表、移行手順、V3 だけにある機能（Kiro 自身の機能を公式ドキュメントに基づいて答える Introspect サブエージェント、会話を枝分かれさせて戻れる `/tangent`）を載せています。**V3 はハーネスの世代（V2 = 従来のハーネス、V3 = 統一ハーネス）、3.0 は CLI の版番号**です。
 
+> ⚠️ **公式の記述に食い違いがあります。** 公式ドキュメント「What's new in CLI V3」（更新日 2026-10-31）は冒頭で V3 を「early release」と呼び、`kiro-cli --v3` で opt-in するまで既存の 2.x の設定は変わらないと書いています。一方、公式ブログ（2026-10-09）は V3 を「既定の体験」としてロールアウトすると告知しています（次節）。更新日は docs の方が新しいため、本サイトは「ロールアウトは段階的で、起動時のプロンプトで切り替えを促す段階にある。opt-in の `--v3` も引き続き有効」と読み、CLI 3.0 の公開（V3 が唯一のハーネスになる時点）とは区別して書いています。
+
 ## 2026 年 10 月 ― V3 が既定に
 
 2026-10-09 の公式ブログ「Kiro CLI V3 is rolling out as the default experience」（<https://kiro.dev/blog/cli-3/>）の要点です。
@@ -82,6 +84,7 @@ Kiro CLI の前身は Amazon Q Developer CLI（Q CLI）です。公式リポジ�
 | [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
 | [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
 | [Changelog CLI 2.36](https://kiro.dev/changelog/cli/2-36/) | 2026-10-29 |
+| [What's new in CLI V3（公式ドキュメント）](https://kiro.dev/docs/cli/v3/) | 2026-10-31 |
 
 ## 次に読む <!-- sources: n/a -->
 

@@ -2,6 +2,8 @@
 
 **Kiro は 1 つの AI コーディングエージェントに、5 つの入口がある。** このサイトは、Kiro を知らない人に向けて「Kiro とは何か」「なぜ今か」「どこから始めるか」を一次情報（kiro.dev の公式ブログ・ドキュメント・changelog）に基づいて案内する **非公式** の日本語サイトです。機能やバージョンごとの詳細は、入口ごとの姉妹サイト 4 本に任せています。
 
+収録範囲: 公式ブログ 2025-07-14〜2026-10-30 公開分（113 本）を読んで書いています（全件の一覧は [公式ブログ索引](kiro-all-docs/03_reference/01_blog-index.md)）。
+
 ## 🐱 30 秒で分かる Kiro
 
 - **誰が**: Amazon Web Services（AWS）が提供するエージェントです。Kiro IDE・Kiro CLI は AWS Customer Agreement のもとで提供されています（<https://kiro.dev/license/>）。
@@ -33,13 +35,13 @@ flowchart TD
 | **Kiro Crew** | 記憶・スケジュール・非同期エージェントで、離れている間も仕事を進める。OSS | [猫でもわかるKiro Crewアップデート情報](https://github.com/kamogashira-sys/kiro-crew-docs) |
 | （6 番目）ACP 対応エディタ | JetBrains IDE・Zed などから Kiro CLI を経由して同じエージェントを使う | <https://kiro.dev/docs/cli/acp/> |
 
-公式はこの選び方を「どれを選ぶかではなく、この仕事にはどれか」と整理しています（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）。
+公式はこの選び方を「どれを選ぶかではなく、この仕事にはどれか」と整理しています（<https://kiro.dev/blog/which-kiro-app-should-i-pick/>）。記事の要旨は [どのアプリを選ぶか](kiro-all-docs/00_start/02_which-app.md) に、Kiro Crew が生まれた経緯は [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md) にまとめました。
 
 ## ⏱️ いまなぜ Kiro か
 
 - 2026-08-03、公式ブログ「One agent, every surface」は、IDE（TypeScript）・CLI（Rust）・Web（Python）で別々だったエージェント本体を **1 つのハーネス** に統一したと公表しました。新機能を 3 回作る時代が終わり、設定が入口を越えて付いて回るようになりました。→ [1 つのエージェント、5 つの入口](kiro-all-docs/01_story/02_one-agent.md)
 - 2026-10-09、Kiro CLI はその統一ハーネス（V3）を既定にするロールアウトを告知し、CLI 3.0 を予告しました。端末にも Specs（要件・設計・タスクを文書にしてから実装する進め方）、クラウドセッション、workflows（複数エージェントの手順を背景で実行）、memory（セッションを越えて文脈を覚える）が来ています。**V3 はハーネスの世代、3.0 は版番号**で、別の言葉です。→ [Kiro CLI の道](kiro-all-docs/01_story/03_cli-journey.md)
-- 公式ドキュメントの言い方では「Kiro is one agent, available everywhere you work.」（<https://kiro.dev/docs/how-kiro-works/>）。
+- 公式ドキュメントの言い方では「Kiro is one agent, available everywhere you work.」（<https://kiro.dev/docs/how-kiro-works/>）。全体像は [Kiro とは](kiro-all-docs/00_start/01_what-is-kiro.md)、2025-07-14 からの流れは [Kiro の年表](kiro-all-docs/01_story/01_timeline.md) に書きました。
 
 ## 🚀 はじめる
 
@@ -57,10 +59,13 @@ kiro-cli chat
 
 | あなたは | ここから |
 |---|---|
-| Kiro を知らない開発者 | [はじめ方](kiro-all-docs/00_start/03_get-started.md) → [1 つのエージェント、5 つの入口](kiro-all-docs/01_story/02_one-agent.md) |
-| Kiro IDE だけ使っている | [1 つのエージェント、5 つの入口](kiro-all-docs/01_story/02_one-agent.md)（設定が共有される仕組み）→ 姉妹サイト（CLI・Web・Crew） |
+| Kiro を知らない開発者 | [Kiro とは](kiro-all-docs/00_start/01_what-is-kiro.md) → [はじめ方](kiro-all-docs/00_start/03_get-started.md) → [1 つのエージェント、5 つの入口](kiro-all-docs/01_story/02_one-agent.md) |
+| Kiro IDE だけ使っている | [1 つのエージェント、5 つの入口](kiro-all-docs/01_story/02_one-agent.md)（設定が共有される仕組み）→ [どのアプリを選ぶか](kiro-all-docs/00_start/02_which-app.md) → 姉妹サイト（CLI・Web・Crew） |
+| 常時稼働のエージェントに興味がある | [Kiro Crew の起源](kiro-all-docs/01_story/04_crew-origin.md) → [Crew 版サイト](https://github.com/kamogashira-sys/kiro-crew-docs) |
+| 言葉が分からなくて止まった | [用語集](kiro-all-docs/03_reference/02_glossary.md) |
 | ターミナル派・CI/CD 担当 | [Kiro CLI の道](kiro-all-docs/01_story/03_cli-journey.md) → [なぜ筆者は Kiro CLI が好きなのか](kiro-all-docs/02_why-kiro-cli/01_why-i-love-kiro-cli.md) → [CLI 版サイト](https://github.com/kamogashira-sys/q-cli-docs) |
 | 旧 Amazon Q Developer CLI を使っていた | [Kiro CLI の道](kiro-all-docs/01_story/03_cli-journey.md)（2025-11-17 以降の経緯）→ [CLI 版サイト](https://github.com/kamogashira-sys/q-cli-docs)（旧 Q CLI のアーカイブあり） |
+| 公式ブログを自分で追いたい | [公式ブログ索引](kiro-all-docs/03_reference/01_blog-index.md)（全 113 本）→ [情報源の使い分け](kiro-all-docs/03_reference/03_sources.md) |
 | 姉妹サイトの読者 | [目次](kiro-all-docs/README.md) |
 
 ## ✍️ 筆者の記事（Qiita）
@@ -70,6 +75,8 @@ kiro-cli chat
 | 2026-09-28 | [猫でもわかるKiro Web ― 端末を閉じても働き続けるKiroの正体](https://qiita.com/kamogashira/items/b1dd5f5dec37ca75206e) | JAWS-UG（AWS のユーザーコミュニティ）栃木 #10 登壇の再構成。統一ハーネスの新系列として提供される Kiro Web、Automation と Mobile の組み合わせ |
 | 2026-08-29 | [Kiro５兄弟のいまどきのセキュリティ基礎知識 ― Kiro CLIとDraw.io MCPで信頼境界を描くまで](https://qiita.com/kamogashira/items/519a52614ba113bfe9cb) | Security-JAWS 第42回 登壇の再構成。IDE・CLI・Web・Mobile・Crew の信頼境界 |
 | 2026-04-23 | [猫でもわかるKiro CLI(CDKコーディング編)](https://qiita.com/kamogashira/items/0e9c9e4e60b032ad9621) | JAWS-UG CDK支部 #25 登壇の再構成。Kiro CLI での AWS CDK（AWS のインフラをコードで定義するツール）コーディングの考え方 |
+
+各記事の要旨と、土台になった「猫でもわかる Q CLI・Kiro CLI」シリーズ 6 本は [筆者の記事](kiro-all-docs/02_why-kiro-cli/02_my-articles.md) にまとめました。
 
 ## 🐾 姉妹サイト
 
@@ -104,7 +111,7 @@ Kiro IDE・Kiro CLI・Kiro Web・Kiro Crew は別製品です。同名の機能�
 | 4 | 事実と筆者の意見を分ける。意見は本ページの 🐾 ブロックと `02_why-kiro-cli/` にだけ書く |
 | 5 | 日付は ISO 形式（`YYYY-MM-DD`）。「〜時点」は公式の表示日を使う |
 
-機械検証（リンク・表記・出典の有無・引用の長さ）は `make check-kiro-all-all` で行っています。
+機械検証（リンク・表記・出典の有無・引用の長さ・ブログ索引の件数）は `make check-kiro-all-all` で行っています。情報源の読み分けと検証の詳細は [情報源の使い分け](kiro-all-docs/03_reference/03_sources.md) に書きました。
 
 ## 🤝 コントリビュート
 

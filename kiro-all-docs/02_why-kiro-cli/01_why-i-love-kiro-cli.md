@@ -38,7 +38,7 @@
 筆者が「一番好きな機能・使い方」として最初に挙げたのは、機能そのものではなく運用面でした。
 
 - **モデルを選べる。** 公式のモデル一覧（<https://kiro.dev/docs/models/available-models/>）には、Anthropic の Claude 各版、OpenAI の GPT-5.6（Sol・Terra・Luna）、GLM-5・DeepSeek 3.2・Kimi K3 といったオープンウェイト系（重みが公開されているモデル）が並びます。CLI では `/model` で切り替えられ、既定の Auto はタスクごとにモデルを自動で選びます。
-- **請求が AWS にまとまる。** 組織で使う場合の話です。公式ドキュメントは、IAM Identity Center で Kiro を使う組織では、Kiro の費用が AWS コンソールの Billing and Cost Management に「Kiro」として表示されると説明しています（<https://kiro.dev/docs/enterprise/>）。AWS を使っている組織なら、エージェントの費用を別の請求先に分けずに済みます。
+- **請求が AWS にまとまる。** 組織で使う場合の話です。公式ドキュメントは、IAM Identity Center で Kiro を使う組織では、Kiro の費用が AWS コンソールの Billing and Cost Management に「Kiro」として表示されると説明しています（<https://kiro.dev/docs/enterprise/billing/>）。AWS を使っている組織なら、エージェントの費用を別の請求先に分けずに済みます。
 
 > 🐾 **筆者のひとこと**: Anthropic・OpenAI など多彩な LLM を 1 つの道具で使えて、AWS の請求にまとめられる。この 2 つが、仕事で使う道具として Kiro CLI を選ぶ最初の理由です。
 
@@ -73,7 +73,7 @@ V3（統一ハーネス）への移行で、筆者が「一番対応に時間が
 | [One agent, every surface](https://kiro.dev/blog/one-agent/) | 2026-08-03 |
 | [Which Kiro app should I pick?](https://kiro.dev/blog/which-kiro-app-should-i-pick/) | 2026-08-12 |
 | [Kiro CLI V3 is rolling out as the default experience](https://kiro.dev/blog/cli-3/) | 2026-10-09 |
-| [Enterprise（Billing の節）](https://kiro.dev/docs/enterprise/)・[Available models](https://kiro.dev/docs/models/available-models/)・[Compaction](https://kiro.dev/docs/compaction/) | 公式ドキュメント |
+| [Enterprise Billing](https://kiro.dev/docs/enterprise/billing/)・[Available models](https://kiro.dev/docs/models/available-models/)・[Compaction](https://kiro.dev/docs/compaction/) | 公式ドキュメント |
 
 ## 次に読む <!-- sources: n/a -->
 
